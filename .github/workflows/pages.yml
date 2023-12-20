@@ -11,6 +11,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
 
 concurrency:
   group: "pages"
@@ -38,4 +39,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deploy-pages
-        uses: actions/deploy-pages@main
+        uses: actions/deploy-pages@v3
