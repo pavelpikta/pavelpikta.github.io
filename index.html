@@ -2,369 +2,102 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>pavelpikta</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
-  <link rel="stylesheet" href="index.css">
-  <link rel="icon" href="https://avatars.githubusercontent.com/u/9392033?v=4" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Pavel's Portfolio - DevOps Engineer" />
+  <title>Pavel's Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/android-chrome-512x512.png" />
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
 </head>
 
-<body>
-  <div id="loading">
-    <div id="spinner"></div>
-  </div>
-  <div id="profile">
-    <div id="profile_img" style="background: url(https://avatars.githubusercontent.com/u/9392033?v=4) center;"></div>
-    <div id="username"><span style="display:block;">Pavel Pikta</span><a
-        href="https://github.com/pavelpikta">@pavelpikta</a></div>
-    <div id="userbio" style="display: block;">DevOps Engineer at <a href="https://www.epam.com/"
-        style="color:white;">EPAM Systems</a>
+<body data-theme="light">
+  <button class="toggle-theme" aria-label="Toggle light/dark mode">
+    <svg viewBox="0 0 24 24" id="theme-icon" fill="currentColor" aria-hidden="true">
+      <circle cx="12" cy="12" r="8" />
+    </svg>
+  </button>
+  <div class="container">
+    <header class="header">
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://github.com/pavelpikta" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385 0.6 0.113 0.82-0.258 0.82-0.577 0-0.285-0.01-1.04-0.015-2.04-3.338 0.724-4.042-1.61-4.042-1.61-0.546-1.385-1.333-1.754-1.333-1.754-1.09-0.744 0.084-0.729 0.084-0.729 1.205 0.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.305 3.492 0.998 0.108-0.776 0.418-1.305 0.762-1.605-2.665-0.305-5.466-1.332-5.466-5.931 0-1.31 0.468-2.381 1.236-3.221-0.124-0.303-0.535-1.523 0.117-3.176 0 0 1.008-0.322 3.301 1.23 0.957-0.266 1.983-0.399 3.003-0.404 1.02 0.005 2.047 0.138 3.006 0.404 2.291-1.552 3.297-1.23 3.297-1.23 0.653 1.653 0.243 2.873 0.12 3.176 0.77 0.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.625-5.479 5.921 0.43 0.371 0.823 1.102 0.823 2.222 0 1.606-0.014 2.898-0.014 3.293 0 0.319 0.218 0.694 0.825 0.576 4.765-1.585 8.198-6.082 8.198-11.385 0-6.627-5.373-12-12-12z" />
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/pavelpikta" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M4.983 3.5C3.339 3.5 2 4.832 2 6.474c0 1.636 1.328 2.974 2.983 2.974 1.653 0 2.984-1.338 2.984-2.974 0-1.643-1.33-2.974-2.984-2.974zM2.4 21.5h5.164v-12h-5.164v12zm7.267 0h4.951v-6.672c0-3.573 4.636-3.86 4.636 0v6.672h4.954v-7.962c0-7.993-8.592-7.703-9.918-3.772v-3.236h-4.623v12h-.001z" />
+          </svg>
+        </a>
+      </div>
+      <div class="gradient-title">Hi there 👋 I'm Pavel 👨‍💻</div>
+      <div class="subtitle">DevOps Engineer – Cloud, Automation, Security</div>
+    </header>
+    <div class="cards" role="list">
+      <section class="card" tabindex="0" role="listitem" data-modal-target="about-modal">
+        <h3>About Me</h3>
+        <ul>
+          <li>7+ years in DevOps &amp; Systems Engineering</li>
+          <li>Cloud-native infrastructure automation &amp; optimization</li>
+          <li>AWS, Terraform, Ansible, Docker expertise</li>
+        </ul>
+      </section>
+      <section class="card" tabindex="0" role="listitem" data-modal-target="skills-modal">
+        <h3>Skills &amp; Tech</h3>
+        <div class="skills-icon-row" aria-label="Skills icons">
+          <img
+            src="https://skillicons.dev/icons?i=ansible,aws,azure,bash,bitbucket,cloudflare,debian,docker,elasticsearch,git,github,githubactions,gitlab,jenkins,kubernetes,linux,md,mysql,nginx,py,redhat,terraform,ubuntu,vscode&perline=8"
+            alt="Skills icons" loading="lazy" />
+        </div>
+      </section>
+      <section class="card" tabindex="0" role="listitem" data-modal-target="expertise-modal">
+        <h3>Expertise</h3>
+        <ul>
+          <li>Infrastructure as Code (Terraform)</li>
+          <li>CI/CD setup &amp; tool integration</li>
+          <li>Container orchestration (Docker/K8s)</li>
+          <li>Monitoring &amp; logging (Grafana, ELK)</li>
+          <li>Automation (Ansible, Python, Bash)</li>
+          <li>Security-first architecture &amp; optimization</li>
+        </ul>
+      </section>
+      <section class="card" tabindex="0" role="listitem" data-modal-target="achievements-modal">
+        <h3>Achievements</h3>
+        <ul>
+          <li>Led AWS account migration</li>
+          <li>Developed robust Ansible roles framework</li>
+        </ul>
+        Organization: <a href="https://github.com/lean-delivery" target="_blank"
+          rel="noopener noreferrer">@lean-delivery</a>
+      </section>
+      <section class="card stats" tabindex="0" role="listitem" data-modal-target="github-modal">
+        <h3>GitHub Stats</h3>
+        <img
+          src="https://github-readme-stats-pavelpikta.vercel.app/api?username=pavelpikta&count_private=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&show_icons=true&theme=dracula&line_height=30"
+          alt="GitHub Stats" loading="lazy" />
+      </section>
     </div>
-    <div id="about">
-      <span style="display:block;"><i class="fas fa-users"></i> &nbsp; <a
-          href="https://github.com/lean-delivery">@lean-delivery</a> </span>
-      <span style="display:block;"><i class="fas fa-link"></i> &nbsp; <a
-          href="https://pavelpikta.com">pavelpikta.com</a></span>
-      <span style="display:block;"><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp; Grodno, Belarus</span>
-      <div class="socials">
-        <span style="display:none !important;"><a href="https://www.twitter.com/null" target="_blank" class="socials"><i
-              class="fab fa-twitter"></i></a></span>
-        <span style="display:none !important;"><a href="https://www.dribbble.com/null" target="_blank"
-            class="socials"><i class="fab fa-dribbble"></i></a></span>
-        <span style="display:block;"><a href="https://www.linkedin.com/in/pavelpikta/" target="_blank"
-            class="socials"><i class="fab fa-linkedin-in"></i></a></span>
-        <span style="display:none !important;"><a href="https://www.medium.com/@null/" target="_blank"
-            class="socials"><i class="fab fa-medium-m"></i></a></span>
+  </div>
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal" role="document">
+      <div class="modal-header">
+        <h4 id="modal-title">Modal Title</h4>
+        <button class="modal-close" aria-label="Close modal" title="Close modal">&times;</button>
+      </div>
+      <div class="modal-content" id="modal-content">
       </div>
     </div>
   </div>
-  <div id="display">
-    <div id="work">
-      <h1>Work.</h1>
-      <div class="projects" id="work_section">
-        <a href="https://github.com/pavelpikta/dev-box" target="_blank">
-          <section>
-            <div class="section_title">dev-box</div>
-            <div class="about_section">
-              <span style="display:block;">Vagrantfile and Ansible playbook for development virtual machine</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-              <span><i class="fas fa-star"></i>&nbsp; 4</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 2</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/ansible-role-allure-server" target="_blank">
-          <section>
-            <div class="section_title">ansible-role-allure-server</div>
-            <div class="about_section">
-              <span style="display:none;">undefined</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/docker-systemd" target="_blank">
-          <section>
-            <div class="section_title">docker-systemd</div>
-            <div class="about_section">
-              <span style="display:block;">Docker images with systemd support</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Dockerfile</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/pavelpikta.github.io" target="_blank">
-          <section>
-            <div class="section_title">pavelpikta.github.io</div>
-            <div class="about_section">
-              <span style="display:block;">Personal website hosted on GitHub Pages</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/pavelpikta" target="_blank">
-          <section>
-            <div class="section_title">pavelpikta</div>
-            <div class="about_section">
-              <span style="display:block;">GitHub Readme profile</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/docker-ansible-ci" target="_blank">
-          <section>
-            <div class="section_title">docker-ansible-ci</div>
-            <div class="about_section">
-              <span style="display:block;">Dockerfile for building ansible executor image</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Dockerfile</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-      </div>
-    </div>
-    <div id="forks" style="display: block;">
-      <h1>Forks.</h1>
-      <div class="projects" id="forks_section">
-        <a href="https://github.com/pavelpikta/pipeline-examples" target="_blank">
-          <section>
-            <div class="section_title">pipeline-examples</div>
-            <div class="about_section">
-              <span style="display:block;">A collection of examples, tips and tricks and snippets of scripting for the
-                Jenkins Pipeline plugin</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Groovy</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/jenkins-scripts" target="_blank">
-          <section>
-            <div class="section_title">jenkins-scripts</div>
-            <div class="about_section">
-              <span style="display:block;">Scripts in Groovy, shell, Ruby, Python, whatever for managing/interacting
-                with Jenkins</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Groovy</span>
-              <span><i class="fas fa-star"></i>&nbsp; 1</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/ansible-examples" target="_blank">
-          <section>
-            <div class="section_title">ansible-examples</div>
-            <div class="about_section">
-              <span style="display:block;">A few starter examples of ansible playbooks, to show features and how they
-                work together. See http://galaxy.ansible.com for example roles from the Ansible community for deploying
-                many popular applications.</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Shell</span>
-              <span><i class="fas fa-star"></i>&nbsp; 1</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/learning-tools" target="_blank">
-          <section>
-            <div class="section_title">learning-tools</div>
-            <div class="about_section">
-              <span style="display:block;">A collection of tools and files for learning new technologies</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Python</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/magisk_files" target="_blank">
-          <section>
-            <div class="section_title">magisk_files</div>
-            <div class="about_section">
-              <span style="display:block;">Magisk File Host</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/ansible-lint-action" target="_blank">
-          <section>
-            <div class="section_title">ansible-lint-action</div>
-            <div class="about_section">
-              <span style="display:block;">GitHub Action for running ansible-lint as part of your workflows! [
-                https://github.com/marketplace/actions/ansible-lint ]</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Shell</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/ansible-role-msft" target="_blank">
-          <section>
-            <div class="section_title">ansible-role-msft</div>
-            <div class="about_section">
-              <span style="display:block;">install software from Microsoft repo</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/ansible-role-java" target="_blank">
-          <section>
-            <div class="section_title">ansible-role-java</div>
-            <div class="about_section">
-              <span style="display:block;">Ansible Role - Java</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; HTML</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/ansible-role-minio" target="_blank">
-          <section>
-            <div class="section_title">ansible-role-minio</div>
-            <div class="about_section">
-              <span style="display:block;">Ansible role to install minio</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Jinja</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/k8s-quickstart" target="_blank">
-          <section>
-            <div class="section_title">k8s-quickstart</div>
-            <div class="about_section">
-              <span style="display:block;">Kubernetes multinode cluster quickstart using vagrant</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/terraform-inventory" target="_blank">
-          <section>
-            <div class="section_title">terraform-inventory</div>
-            <div class="about_section">
-              <span style="display:block;">Terraform State → Ansible Dynamic Inventory</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-        <a href="https://github.com/pavelpikta/ansible.users" target="_blank">
-          <section>
-            <div class="section_title">ansible.users</div>
-            <div class="about_section">
-              <span style="display:block;">This is an Ansible role which users and user's authorized keys
-                manages.</span>
-            </div>
-            <div class="bottom_section">
-              <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-              <span><i class="fas fa-star"></i>&nbsp; 0</span>
-              <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-            </div>
-          </section>
-        </a>
-      </div>
-    </div>
-    <div id="blog_section">
-      <h1>Blog.</h1>
-      <div id="blogs"></div>
-    </div>
-  </div>
-  <script type="text/javascript">
-    setTimeout(function () {
-      document.getElementById("loading").classList.add("animated");
-      document.getElementById("loading").classList.add("fadeOut");
-      setTimeout(function () {
-        document.getElementById("loading").classList.remove("animated");
-        document.getElementById("loading").classList.remove("fadeOut");
-        document.getElementById("loading").style.display = "none";
-      }, 800);
-    }, 1500);
-    $.getJSON("blog.json", function (blog) {
-      blog = blog || [];
-      if (blog.length == 0) {
-        return (document.getElementById("blog_section").style.display =
-          "none");
-      }
-      for (var i = 0; i < blog.length; i++) {
-        $("#blogs").append(`
-            <a href="./blog/${blog[i].url_title}/" target="_blank">
-                <section>
-                    <img src="./blog/${blog[i].url_title}/${blog[i].top_image}">
-                    <div class="blog_container">
-                        <div class="section_title">${blog[i].title}</div>
-                        <div class="about_section">
-                            ${blog[i].sub_title}
-                        </div>
-                    </div>
-                </section>
-            </a>
-            `);
-      }
-    }).fail(function () {
-      return (document.getElementById("blog_section").style.display = "none");
-    });
-  </script>
-
-  <script>
-    const magicProjectsGrid = new MagicGrid({
-      container: "#work_section",
-      animate: false,
-      gutter: 30, // default gutter size
-      static: true,
-      useMin: false,
-      maxColumns: 2,
-      useTransform: true
-    });
-
-    const magicForksGrid = new MagicGrid({
-      container: "#forks_section",
-      animate: false,
-      gutter: 30, // default gutter size
-      static: true,
-      useMin: false,
-      maxColumns: 2,
-      useTransform: true
-    });
-
-    $("document").ready(() => {
-      magicProjectsGrid.listen();
-      magicForksGrid.listen();
-    });
-  </script>
-
-
+  <script src="js/main.js"></script>
 </body>
 
 </html>
