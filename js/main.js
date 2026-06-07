@@ -123,21 +123,29 @@
     });
   });
 
-  async function loadGitHubProfile() {
-    const bar = document.getElementById('github-profile-bar');
-    const metricsEl = document.getElementById('github-metrics');
-    if (!bar || !metricsEl) return;
+  function initStatsImages() {
+    document.querySelectorAll('[data-github-stat]').forEach((img) => {
+      const skeleton = document.querySelector(`[data-skeleton-for="${img.id}"]`);
+      if (img.complete && img.naturalWidth > 0) {
+        img.classList.add('loaded');
+        skeleton?.classList.add('hidden');
+      }
+    });
+  }
 
+  async function loadGitHubProfile() {
     const username = config.githubUsername || 'pavelpikta';
+    const avatar = document.getElementById('github-profile-avatar');
+    const name = document.getElementById('github-profile-name');
+    const handle = document.getElementById('github-profile-handle');
+    const metricRepos = document.getElementById('metric-repos');
+    const metricFollowers = document.getElementById('metric-followers');
+    const metricFollowing = document.getElementById('metric-following');
 
     try {
       const res = await fetch(`https://api.github.com/users/${username}`);
       if (!res.ok) throw new Error();
       const user = await res.json();
-
-      const avatar = document.getElementById('github-profile-avatar');
-      const name = document.getElementById('github-profile-name');
-      const handle = document.getElementById('github-profile-handle');
 
       if (avatar) {
         avatar.src = user.avatar_url;
@@ -145,30 +153,19 @@
       }
       if (name) name.textContent = user.name || user.login;
       if (handle) {
-        handle.textContent = `@${user.login}`;
+        handle.innerHTML = `<i class="bi bi-github me-1"></i>@${user.login}`;
         handle.href = user.html_url;
       }
-
-      const metrics = [
-        { icon: 'bi-folder2', label: 'Repos', value: user.public_repos },
-        { icon: 'bi-people', label: 'Followers', value: user.followers },
-        { icon: 'bi-person-plus', label: 'Following', value: user.following },
-      ];
-
-      metricsEl.innerHTML = metrics.map((m) => `
-        <div class="github-metric">
-          <i class="bi ${m.icon}"></i>
-          <span class="github-metric-value">${m.value}</span>
-          <span class="github-metric-label">${m.label}</span>
-        </div>`).join('');
-
-      bar.hidden = false;
+      if (metricRepos) metricRepos.textContent = user.public_repos;
+      if (metricFollowers) metricFollowers.textContent = user.followers;
+      if (metricFollowing) metricFollowing.textContent = user.following;
     } catch {
-      bar.hidden = true;
+      /* Keep fallback static content already in HTML */
     }
   }
 
   loadGitHubProfile();
+  initStatsImages();
 
   if (config.cloudflareAnalyticsToken) {
     const script = document.createElement('script');

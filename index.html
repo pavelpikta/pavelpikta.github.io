@@ -382,57 +382,99 @@
     </section>
 
     <!-- GitHub Stats & Repos -->
-    <section class="section-padding" id="stats">
+    <section class="section-padding section-alt" id="stats">
       <div class="container">
         <div class="section-header text-center mb-5 reveal">
           <span class="section-label">Activity</span>
           <h2 class="section-title">GitHub</h2>
-          <p class="text-muted-custom mt-3">Contributions, languages, and open-source activity</p>
+          <p class="text-muted-custom mt-3">Profile, contributions, languages &amp; repositories</p>
         </div>
 
-        <div class="github-profile-bar glass-card p-4 mb-4 reveal" id="github-profile-bar" hidden>
-          <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3">
-            <img src="" alt="" class="github-profile-avatar" id="github-profile-avatar" width="64" height="64" />
-            <div class="flex-grow-1">
-              <h3 class="h5 mb-0" id="github-profile-name"></h3>
-              <a href="https://github.com/pavelpikta" class="text-muted-custom small" id="github-profile-handle" target="_blank" rel="noopener noreferrer">@pavelpikta</a>
+        <div class="github-dashboard glass-card reveal">
+          <!-- Profile header -->
+          <div class="github-profile-header">
+            <div class="github-profile-identity">
+              <img src="assets/images/avatar.png" alt="Pavel Pikta on GitHub" class="github-profile-avatar" id="github-profile-avatar" width="80" height="80" />
+              <div>
+                <h3 class="github-profile-name h4 mb-1" id="github-profile-name">Pavel Pikta</h3>
+                <a href="https://github.com/pavelpikta" class="github-profile-handle" id="github-profile-handle" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github me-1"></i>@pavelpikta
+                </a>
+              </div>
             </div>
-            <div class="github-metrics d-flex flex-wrap gap-3" id="github-metrics"></div>
-          </div>
-        </div>
-
-        <div class="row g-4 mb-4">
-          <div class="col-lg-7 reveal">
-            <div class="stats-panel glass-card p-3 p-lg-4 h-100">
-              <h3 class="stats-panel-title"><i class="bi bi-bar-chart-line me-2"></i>Profile Statistics</h3>
-              <div class="stats-wrapper position-relative">
-                <div class="stats-skeleton" data-skeleton-for="github-stats-profile" aria-hidden="true"></div>
-                <img src="" alt="GitHub profile statistics for pavelpikta" loading="lazy" class="stats-img img-fluid w-100" id="github-stats-profile" data-github-stat="profile" data-username="pavelpikta" />
+            <div class="github-metrics" id="github-metrics">
+              <div class="github-metric">
+                <i class="bi bi-folder2"></i>
+                <span class="github-metric-value" id="metric-repos">—</span>
+                <span class="github-metric-label">Repos</span>
+              </div>
+              <div class="github-metric">
+                <i class="bi bi-people"></i>
+                <span class="github-metric-value" id="metric-followers">—</span>
+                <span class="github-metric-label">Followers</span>
+              </div>
+              <div class="github-metric">
+                <i class="bi bi-person-plus"></i>
+                <span class="github-metric-value" id="metric-following">—</span>
+                <span class="github-metric-label">Following</span>
               </div>
             </div>
           </div>
-          <div class="col-lg-5 reveal">
-            <div class="stats-panel glass-card p-3 p-lg-4 h-100">
-              <h3 class="stats-panel-title"><i class="bi bi-pie-chart me-2"></i>Top Languages</h3>
-              <div class="stats-wrapper position-relative">
-                <div class="stats-skeleton stats-skeleton-sm" data-skeleton-for="github-stats-langs" aria-hidden="true"></div>
-                <img src="" alt="Most used programming languages on GitHub" loading="lazy" class="stats-img img-fluid w-100" id="github-stats-langs" data-github-stat="langs" data-username="pavelpikta" />
+
+          <hr class="github-divider" />
+
+          <!-- Stats cards -->
+          <div class="row g-4 github-stats-row">
+            <div class="col-lg-7">
+              <div class="stats-panel-inner">
+                <h4 class="stats-panel-title"><i class="bi bi-bar-chart-line me-2"></i>Profile Statistics</h4>
+                <div class="stats-wrapper position-relative">
+                  <div class="stats-skeleton" data-skeleton-for="github-stats-profile" aria-hidden="true"></div>
+                  <img
+                    src="https://github-stats.pavelpikta.com/api?username=pavelpikta&count_private=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&show_icons=true&theme=dracula&hide_border=true&include_all_commits=true&rank_icon=percentile&line_height=28"
+                    alt="GitHub profile statistics for pavelpikta"
+                    loading="lazy"
+                    class="stats-img img-fluid w-100"
+                    id="github-stats-profile"
+                    data-github-stat="profile"
+                    data-username="pavelpikta" />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="stats-panel-inner">
+                <h4 class="stats-panel-title"><i class="bi bi-pie-chart me-2"></i>Top Languages</h4>
+                <div class="stats-wrapper position-relative">
+                  <div class="stats-skeleton stats-skeleton-sm" data-skeleton-for="github-stats-langs" aria-hidden="true"></div>
+                  <img
+                    src="https://github-stats.pavelpikta.com/api/top-langs/?username=pavelpikta&layout=compact&theme=dracula&hide_border=true&langs_count=8"
+                    alt="Most used programming languages on GitHub"
+                    loading="lazy"
+                    class="stats-img img-fluid w-100"
+                    id="github-stats-langs"
+                    data-github-stat="langs"
+                    data-username="pavelpikta" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="text-center mb-5 reveal">
-          <a href="https://github.com/pavelpikta" class="btn btn-outline-primary btn-lg" target="_blank" rel="noopener noreferrer">
-            <i class="bi bi-github me-2"></i>View Full Profile
-          </a>
-        </div>
+          <hr class="github-divider" />
 
-        <div class="section-header text-center mb-4 reveal">
-          <h2 class="section-title h4">Recent Repositories</h2>
-        </div>
-        <div class="row g-4" id="repos-grid">
-          <div class="col-12 text-center text-muted-custom" id="repos-loading"><span class="spinner-border spinner-border-sm me-2"></span>Loading repositories…</div>
+          <!-- Repositories -->
+          <div class="github-repos-section">
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+              <h4 class="stats-panel-title mb-0"><i class="bi bi-git me-2"></i>Recent Repositories</h4>
+              <a href="https://github.com/pavelpikta" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                View All <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+            <div class="row g-4" id="repos-grid">
+              <div class="col-12 text-center text-muted-custom py-3" id="repos-loading">
+                <span class="spinner-border spinner-border-sm me-2"></span>Loading repositories…
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

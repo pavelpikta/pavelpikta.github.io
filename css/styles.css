@@ -750,57 +750,137 @@ body {
 /* ── Timeline ── */
 /* removed */
 
-/* ── GitHub stats ── */
-.github-profile-bar[hidden] {
-  display: none !important;
+/* ── GitHub dashboard ── */
+.github-dashboard {
+  padding: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.github-dashboard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--bs-primary), var(--accent), var(--bs-primary));
+}
+
+.github-profile-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.github-profile-identity {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
 }
 
 .github-profile-avatar {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  border: 2px solid var(--surface-border);
+  border: 3px solid rgba(var(--bs-primary-rgb), 0.35);
+  box-shadow: 0 8px 24px rgba(var(--bs-primary-rgb), 0.25);
+  object-fit: cover;
+}
+
+.github-profile-name {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.github-profile-handle {
+  color: var(--text-muted-custom);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.github-profile-handle:hover {
+  color: var(--bs-primary);
 }
 
 .github-metrics {
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .github-metric {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 72px;
-  padding: 0.5rem 0.75rem;
-  border-radius: 12px;
-  background: rgba(var(--bs-primary-rgb), 0.06);
-  border: 1px solid var(--surface-border);
+  min-width: 88px;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  background: rgba(var(--bs-primary-rgb), 0.08);
+  border: 1px solid rgba(var(--bs-primary-rgb), 0.15);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.github-metric:hover {
+  transform: translateY(-2px);
+  border-color: rgba(var(--bs-primary-rgb), 0.35);
 }
 
 .github-metric i {
   color: var(--bs-primary);
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
 }
 
 .github-metric-value {
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .github-metric-label {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--text-muted-custom);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  margin-top: 0.15rem;
+}
+
+.github-divider {
+  border-color: var(--surface-border);
+  opacity: 1;
+  margin: 1.75rem 0;
+}
+
+.github-stats-row {
+  align-items: stretch;
+}
+
+.stats-panel-inner {
+  background: rgba(var(--bs-primary-rgb), 0.04);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  height: 100%;
 }
 
 .stats-panel-title {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--text-muted-custom);
+  color: var(--bs-body-color);
+  display: flex;
+  align-items: center;
+}
+
+.stats-panel-title i {
+  color: var(--bs-primary);
 }
 
 .stats-panel-error .stats-wrapper::after {
@@ -819,6 +899,27 @@ body {
 
 .stats-skeleton-sm {
   min-height: 140px;
+}
+
+@media (max-width: 575.98px) {
+  .github-dashboard {
+    padding: 1.25rem;
+  }
+
+  .github-profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .github-metrics {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .github-metric {
+    flex: 1;
+    min-width: 0;
+  }
 }
 
 /* ── Projects ── */
