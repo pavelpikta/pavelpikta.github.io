@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Pavel's Portfolio - DevOps Engineer" />
-  <title>Pavel's Portfolio</title>
+  <meta name="description"
+    content="Pavel Pikta — DevOps Engineer specializing in cloud infrastructure, automation, and security." />
+  <meta name="author" content="Pavel Pikta" />
+  <meta name="theme-color" content="#6366f1" id="theme-color-meta" />
+  <meta property="og:title" content="Pavel Pikta · DevOps Engineer" />
+  <meta property="og:description"
+    content="DevOps Engineer specializing in cloud infrastructure, automation, and security." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pavelpikta.com/" />
+  <meta property="og:image" content="https://pavelpikta.com/assets/images/avatar.png" />
+  <title>Pavel Pikta · DevOps Engineer</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
@@ -17,86 +34,481 @@
   <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
 </head>
 
-<body data-theme="light">
-  <button class="toggle-theme" aria-label="Toggle light/dark mode">
-    <svg viewBox="0 0 24 24" id="theme-icon" fill="currentColor" aria-hidden="true">
-      <circle cx="12" cy="12" r="8" />
-    </svg>
-  </button>
-  <div class="container">
-    <header class="header">
-      <div class="social-links" aria-label="Social media links">
-        <a href="https://github.com/pavelpikta" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path
-              d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385 0.6 0.113 0.82-0.258 0.82-0.577 0-0.285-0.01-1.04-0.015-2.04-3.338 0.724-4.042-1.61-4.042-1.61-0.546-1.385-1.333-1.754-1.333-1.754-1.09-0.744 0.084-0.729 0.084-0.729 1.205 0.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.305 3.492 0.998 0.108-0.776 0.418-1.305 0.762-1.605-2.665-0.305-5.466-1.332-5.466-5.931 0-1.31 0.468-2.381 1.236-3.221-0.124-0.303-0.535-1.523 0.117-3.176 0 0 1.008-0.322 3.301 1.23 0.957-0.266 1.983-0.399 3.003-0.404 1.02 0.005 2.047 0.138 3.006 0.404 2.291-1.552 3.297-1.23 3.297-1.23 0.653 1.653 0.243 2.873 0.12 3.176 0.77 0.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.625-5.479 5.921 0.43 0.371 0.823 1.102 0.823 2.222 0 1.606-0.014 2.898-0.014 3.293 0 0.319 0.218 0.694 0.825 0.576 4.765-1.585 8.198-6.082 8.198-11.385 0-6.627-5.373-12-12-12z" />
-          </svg>
-        </a>
-        <a href="https://linkedin.com/in/pavelpikta" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path
-              d="M4.983 3.5C3.339 3.5 2 4.832 2 6.474c0 1.636 1.328 2.974 2.983 2.974 1.653 0 2.984-1.338 2.984-2.974 0-1.643-1.33-2.974-2.984-2.974zM2.4 21.5h5.164v-12h-5.164v12zm7.267 0h4.951v-6.672c0-3.573 4.636-3.86 4.636 0v6.672h4.954v-7.962c0-7.993-8.592-7.703-9.918-3.772v-3.236h-4.623v12h-.001z" />
-          </svg>
-        </a>
-      </div>
-      <div class="gradient-title">Hi there 👋 I'm Pavel 👨‍💻</div>
-      <div class="subtitle">DevOps Engineer – Cloud, Automation, Security</div>
-    </header>
-    <div class="cards" role="list">
-      <section class="card" tabindex="0" role="listitem" data-modal-target="about-modal">
-        <h3>About Me</h3>
-        <ul>
-          <li>7+ years in DevOps &amp; Systems Engineering</li>
-          <li>Cloud-native infrastructure automation &amp; optimization</li>
-          <li>AWS, Terraform, Ansible, Docker expertise</li>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="bg-mesh" aria-hidden="true">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg fixed-top site-nav" id="site-nav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#hero">
+        <span class="brand-dot"></span>Pavel<span class="text-accent">.</span>
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#expertise">Expertise</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stats">Stats</a></li>
+          <li class="nav-item ms-lg-2">
+            <button class="btn btn-icon" id="theme-toggle" type="button" aria-label="Toggle light/dark mode">
+              <i class="bi bi-sun-fill theme-icon-light"></i>
+              <i class="bi bi-moon-stars-fill theme-icon-dark"></i>
+            </button>
+          </li>
         </ul>
-      </section>
-      <section class="card" tabindex="0" role="listitem" data-modal-target="skills-modal">
-        <h3>Skills &amp; Tech</h3>
-        <div class="skills-icon-row" aria-label="Skills icons">
-          <img
-            src="https://skillicons.dev/icons?i=ansible,aws,azure,bash,bitbucket,cloudflare,debian,docker,elasticsearch,git,github,githubactions,gitlab,jenkins,kubernetes,linux,md,mysql,nginx,py,redhat,terraform,ubuntu,vscode&perline=8"
-            alt="Skills icons" loading="lazy" />
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-7">
+            <div class="hero-visual hero-visual-sm d-lg-none mb-4" aria-hidden="true">
+              <div class="hero-avatar">
+                <img src="assets/images/avatar.png" alt="" width="100" height="100" />
+              </div>
+            </div>
+            <div class="hero-badge mb-4">
+              <span class="pulse-dot"></span>
+              Available for DevOps &amp; Cloud projects
+            </div>
+            <h1 class="hero-title display-3 fw-bold mb-3">
+              Hi there <span class="wave" role="img" aria-label="waving hand">👋</span><br />
+              I&rsquo;m <span class="gradient-text">Pavel Pikta</span>
+            </h1>
+            <p class="hero-subtitle lead mb-4">
+              DevOps Engineer — Cloud, Automation &amp; Security
+            </p>
+            <p class="hero-desc mb-5">
+              7+ years building resilient cloud-native infrastructure with Terraform, Ansible, and modern CI/CD
+              pipelines across AWS and beyond.
+            </p>
+            <div class="hero-actions d-flex flex-wrap align-items-center gap-3">
+              <a href="#about" class="btn btn-primary btn-lg px-4">
+                <i class="bi bi-person me-2" aria-hidden="true"></i>About Me
+              </a>
+              <a href="https://github.com/pavelpikta" class="btn btn-hero-secondary btn-lg px-4" target="_blank"
+                rel="noopener noreferrer">
+                <i class="bi bi-github me-2" aria-hidden="true"></i>GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/pavelpikta" class="btn btn-hero-secondary btn-lg px-4"
+                target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-linkedin me-2" aria-hidden="true"></i>LinkedIn
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+            <div class="hero-visual" aria-hidden="true">
+              <div class="hero-ring hero-ring-1"></div>
+              <div class="hero-ring hero-ring-2"></div>
+              <div class="hero-avatar">
+                <img src="assets/images/avatar.png" alt="Pavel Pikta" width="140" height="140" />
+              </div>
+              <div class="hero-float hero-float-1"><i class="bi bi-cloud-fill"></i></div>
+              <div class="hero-float hero-float-2"><i class="bi bi-gear-fill"></i></div>
+              <div class="hero-float hero-float-3"><i class="bi bi-shield-lock-fill"></i></div>
+            </div>
+          </div>
         </div>
-      </section>
-      <section class="card" tabindex="0" role="listitem" data-modal-target="expertise-modal">
-        <h3>Expertise</h3>
-        <ul>
-          <li>Infrastructure as Code (Terraform)</li>
-          <li>CI/CD setup &amp; tool integration</li>
-          <li>Container orchestration (Docker/K8s)</li>
-          <li>Monitoring &amp; logging (Grafana, ELK)</li>
-          <li>Automation (Ansible, Python, Bash)</li>
-          <li>Security-first architecture &amp; optimization</li>
-        </ul>
-      </section>
-      <section class="card" tabindex="0" role="listitem" data-modal-target="achievements-modal">
-        <h3>Achievements</h3>
-        <ul>
-          <li>Led AWS account migration</li>
-          <li>Developed robust Ansible roles framework</li>
-        </ul>
-        Organization: <a href="https://github.com/lean-delivery" target="_blank"
-          rel="noopener noreferrer">@lean-delivery</a>
-      </section>
-      <section class="card stats" tabindex="0" role="listitem" data-modal-target="github-modal">
-        <h3>GitHub Stats</h3>
-        <img
-          src="https://github-stats.pavelpikta.com/api?username=pavelpikta&count_private=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&show_icons=true&theme=dracula&line_height=30"
-          alt="GitHub Stats" loading="lazy" />
-      </section>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section-padding" id="about">
+      <div class="container">
+        <div class="section-header text-center mb-5 reveal">
+          <span class="section-label">About</span>
+          <h2 class="section-title">Who I Am</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4 reveal">
+            <div class="stat-card h-100">
+              <div class="stat-icon"><i class="bi bi-calendar-check"></i></div>
+              <div class="stat-value">7+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="stat-card h-100">
+              <div class="stat-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+              <div class="stat-value">Cloud</div>
+              <div class="stat-label">Native Infrastructure</div>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="stat-card h-100">
+              <div class="stat-icon"><i class="bi bi-shield-check"></i></div>
+              <div class="stat-value">Security</div>
+              <div class="stat-label">First Architecture</div>
+            </div>
+          </div>
+          <div class="col-12 reveal">
+            <div class="glass-card p-4 p-lg-5">
+              <div class="row align-items-center g-4">
+                <div class="col-lg-8">
+                  <p class="mb-3">
+                    <strong>DevOps &amp; Systems Engineer</strong> specializing in Infrastructure as Code, configuration
+                    management, and advanced CI/CD pipelines with GitLab CI, GitHub Actions, and Jenkins.
+                  </p>
+                  <ul class="about-list mb-0">
+                    <li>Cloud-native infrastructure automation &amp; optimization</li>
+                    <li>AWS, Terraform, Ansible, Docker expertise</li>
+                    <li>Multi-cloud architectures with AWS focus</li>
+                    <li>Monitoring, logging &amp; security (ELK, Grafana)</li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#aboutModal">
+                    Read Full Bio <i class="bi bi-arrow-right ms-1"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section-padding section-alt" id="skills">
+      <div class="container">
+        <div class="section-header text-center mb-5 reveal">
+          <span class="section-label">Stack</span>
+          <h2 class="section-title">Skills &amp; Technologies</h2>
+        </div>
+        <div class="glass-card p-4 p-lg-5 reveal">
+          <div class="skills-icon-row text-center mb-4">
+            <img
+              src="https://skillicons.dev/icons?i=ansible,aws,azure,bash,bitbucket,cloudflare,debian,docker,elasticsearch,git,github,githubactions,gitlab,jenkins,kubernetes,linux,md,mysql,nginx,py,redhat,terraform,ubuntu,vscode&perline=8"
+              alt="Skills and technology icons" loading="lazy" class="img-fluid" />
+          </div>
+          <div class="text-center">
+            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#skillsModal">
+              View All Technologies <i class="bi bi-box-arrow-up-right ms-1"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise -->
+    <section class="section-padding" id="expertise">
+      <div class="container">
+        <div class="section-header text-center mb-5 reveal">
+          <span class="section-label">Expertise</span>
+          <h2 class="section-title">What I Do Best</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal">
+            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal"
+              data-bs-target="#expertiseModal">
+              <div class="feature-icon"><i class="bi bi-diagram-3"></i></div>
+              <h3>Infrastructure as Code</h3>
+              <p>Reproducible, version-controlled deployments with Terraform across multi-cloud environments.</p>
+              <span class="feature-link">Learn more <i class="bi bi-arrow-right"></i></span>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
+            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal"
+              data-bs-target="#expertiseModal">
+              <div class="feature-icon"><i class="bi bi-arrow-repeat"></i></div>
+              <h3>CI/CD Pipelines</h3>
+              <p>Design, integration, and optimization of Jenkins, GitLab CI, and GitHub Actions workflows.</p>
+              <span class="feature-link">Learn more <i class="bi bi-arrow-right"></i></span>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
+            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal"
+              data-bs-target="#expertiseModal">
+              <div class="feature-icon"><i class="bi bi-box-seam"></i></div>
+              <h3>Containers &amp; K8s</h3>
+              <p>Container orchestration and management with Docker and Kubernetes at scale.</p>
+              <span class="feature-link">Learn more <i class="bi bi-arrow-right"></i></span>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
+            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal"
+              data-bs-target="#expertiseModal">
+              <div class="feature-icon"><i class="bi bi-graph-up"></i></div>
+              <h3>Observability</h3>
+              <p>Monitoring and logging with Grafana, ELK, and New Relic for actionable insights.</p>
+              <span class="feature-link">Learn more <i class="bi bi-arrow-right"></i></span>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
+            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal"
+              data-bs-target="#expertiseModal">
+              <div class="feature-icon"><i class="bi bi-robot"></i></div>
+              <h3>Automation</h3>
+              <p>Configuration management with Ansible plus scripting in Python and Bash.</p>
+              <span class="feature-link">Learn more <i class="bi bi-arrow-right"></i></span>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
+            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal"
+              data-bs-target="#expertiseModal">
+              <div class="feature-icon"><i class="bi bi-lock"></i></div>
+              <h3>Security &amp; Compliance</h3>
+              <p>Security-first architecture, hardening, and automated compliance workflows.</p>
+              <span class="feature-link">Learn more <i class="bi bi-arrow-right"></i></span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="section-padding section-alt" id="achievements">
+      <div class="container">
+        <div class="section-header text-center mb-5 reveal">
+          <span class="section-label">Highlights</span>
+          <h2 class="section-title">Key Achievements</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6 reveal">
+            <div class="glass-card achievement-card h-100 p-4 p-lg-5">
+              <div class="achievement-number">01</div>
+              <h3>AWS Account Migration</h3>
+              <p>Led migration of multiple solutions from shared AWS accounts to isolated, production-grade dedicated
+                accounts — improving security posture and cost allocation.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="glass-card achievement-card h-100 p-4 p-lg-5">
+              <div class="achievement-number">02</div>
+              <h3>Ansible Roles Framework</h3>
+              <p>Developed extensible and reusable Ansible roles and collections, enabling independent deployment and
+                configuration management across teams.</p>
+            </div>
+          </div>
+          <div class="col-12 reveal">
+            <div
+              class="glass-card p-4 p-lg-5 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+              <div>
+                <h3 class="h5 mb-1">Open Source Contributor</h3>
+                <p class="text-muted-custom mb-0">Active member of <a href="https://github.com/lean-delivery"
+                    target="_blank" rel="noopener noreferrer">@lean-delivery</a> — DevOps tools and best practices.</p>
+              </div>
+              <button class="btn btn-primary flex-shrink-0" type="button" data-bs-toggle="modal"
+                data-bs-target="#achievementsModal">
+                All Achievements <i class="bi bi-trophy ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Stats -->
+    <section class="section-padding" id="stats">
+      <div class="container">
+        <div class="section-header text-center mb-5 reveal">
+          <span class="section-label">Activity</span>
+          <h2 class="section-title">GitHub Stats</h2>
+        </div>
+        <div class="glass-card p-4 p-lg-5 reveal">
+          <div class="stats-wrapper text-center">
+            <img
+              src="https://github-stats.pavelpikta.com/api?username=pavelpikta&count_private=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&show_icons=true&theme=dracula&line_height=30"
+              alt="GitHub contribution statistics for pavelpikta" loading="lazy" class="stats-img img-fluid"
+              id="github-stats-img" data-username="pavelpikta" />
+          </div>
+          <div class="text-center mt-4">
+            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#githubModal">
+              Full Stats Overview <i class="bi bi-bar-chart ms-1"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-md-6">
+          <p class="footer-brand mb-1 fw-bold">Pavel Pikta</p>
+          <p class="text-muted-custom mb-0 small">DevOps Engineer · Cloud · Automation · Security</p>
+        </div>
+        <div class="col-md-6">
+          <div class="footer-social d-flex justify-content-md-end gap-3">
+            <a href="https://github.com/pavelpikta" aria-label="GitHub" target="_blank" rel="noopener noreferrer"
+              class="social-btn">
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/pavelpikta" aria-label="LinkedIn" target="_blank"
+              rel="noopener noreferrer" class="social-btn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-12">
+          <hr class="footer-divider" />
+          <p class="text-center text-muted-custom small mb-0">
+            &copy; <span id="year"></span> Pavel Pikta.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="aboutModalLabel">About Me</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>DevOps &amp; Systems Engineer with 7+ years of hands-on experience</strong> building, automating,
+            and securing modern cloud-native infrastructures. I specialize in Infrastructure as Code with Terraform,
+            configuration management with Ansible, and the design of advanced CI/CD pipelines using GitLab CI, GitHub
+            Actions, and Jenkins.</p>
+          <p>My expertise spans <strong>multi-cloud architectures (AWS focus)</strong>, Docker containerization, network
+            automation, and team enablement for scalable software delivery.</p>
+          <h6 class="text-accent mt-4">Key Strengths</h6>
+          <ul>
+            <li>Architecting resilient, observable, and secure systems for e-commerce and SaaS</li>
+            <li>Migrating legacy solutions to isolated AWS environments using best practices</li>
+            <li>Developing reusable Ansible roles and libraries to boost team productivity</li>
+            <li>Integrating monitoring, logging, and security solutions (ELK, Grafana, New Relic)</li>
+            <li>Automating complex deployment, networking and security compliance tasks</li>
+            <li>Excelling in fast-paced, multicultural engineering teams</li>
+          </ul>
+          <p class="mb-0">Beyond technology, I am committed to <strong>continuous improvement</strong>, performance
+            tuning, and knowledge sharing through both documentation and mentorship.</p>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal" role="document">
-      <div class="modal-header">
-        <h4 id="modal-title">Modal Title</h4>
-        <button class="modal-close" aria-label="Close modal" title="Close modal">&times;</button>
-      </div>
-      <div class="modal-content" id="modal-content">
+
+  <div class="modal fade" id="skillsModal" tabindex="-1" aria-labelledby="skillsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="skillsModalLabel">Skills &amp; Technologies</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>I have proficiency in diverse tools and technologies in infrastructure automation, cloud platforms,
+            configuration management, container orchestration, monitoring, and scripting.</p>
+          <h6 class="text-accent mt-3">Core Technologies</h6>
+          <ul>
+            <li><strong>IaC &amp; Configuration:</strong> Terraform, Ansible</li>
+            <li><strong>Cloud Platforms:</strong> AWS, Azure</li>
+            <li><strong>Containers &amp; Orchestration:</strong> Docker, Kubernetes</li>
+            <li><strong>Monitoring &amp; Logging:</strong> ELK Stack, Grafana, New Relic, Elastic Cloud Enterprise</li>
+            <li><strong>CI/CD:</strong> Jenkins, GitLab CI, GitHub Actions</li>
+            <li><strong>Scripting &amp; Automation:</strong> Bash, Python, Groovy</li>
+            <li><strong>Version Control:</strong> Git, GitHub, GitLab, Bitbucket</li>
+            <li><strong>Networking &amp; Security:</strong> Network automation, security hardening, compliance</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="expertiseModal" tabindex="-1" aria-labelledby="expertiseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="expertiseModalLabel">Expertise Areas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6 class="text-accent">Design &amp; Architecture</h6>
+          <ul>
+            <li>Infrastructure as Code (Terraform) for reproducible, version-controlled deployments</li>
+            <li>CI/CD pipelines (Jenkins, GitLab CI, GitHub Actions) — design, integration, optimization</li>
+            <li>Container orchestration and management with Docker &amp; Kubernetes</li>
+            <li>Multi-cloud and hybrid-cloud strategies with focus on AWS</li>
+          </ul>
+          <h6 class="text-accent mt-4">Operations &amp; Automation</h6>
+          <ul>
+            <li>Configuration management and system provisioning with Ansible</li>
+            <li>Monitoring and observability (Grafana, ELK, New Relic)</li>
+            <li>Logs aggregation and analysis for troubleshooting</li>
+            <li>Security hardening and compliance automation</li>
+            <li>Network automation and optimization</li>
+          </ul>
+          <h6 class="text-accent mt-4">Team &amp; Processes</h6>
+          <ul class="mb-0">
+            <li>Mentoring and knowledge transfer within engineering teams</li>
+            <li>Documentation and wiki management (Confluence, GitLab Pages)</li>
+            <li>Cross-functional collaboration in agile environments</li>
+            <li>Security-first principles in all infrastructure decisions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="achievementsModal" tabindex="-1" aria-labelledby="achievementsModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="achievementsModalLabel">Key Achievements</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6 class="text-accent">Major Projects</h6>
+          <ul>
+            <li><strong>AWS Account Migration:</strong> Led migration of multiple solutions from shared AWS accounts to
+              isolated, production-grade dedicated accounts</li>
+            <li><strong>Ansible Roles Framework:</strong> Developed extensible and reusable Ansible roles and
+              collections for cross-team deployment</li>
+            <li>Implemented comprehensive CI/CD pipelines reducing deployment time and improving release reliability
+            </li>
+            <li>Designed and deployed multi-tier monitoring solutions improving observability and incident response
+              times</li>
+          </ul>
+          <h6 class="text-accent mt-4">Community &amp; Contribution</h6>
+          <p class="mb-0">Active member and contributor of the <a href="https://github.com/lean-delivery"
+              target="_blank" rel="noopener noreferrer"><strong>@lean-delivery</strong></a> organization, working on
+            open-source DevOps tools and best practices.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="githubModal" tabindex="-1" aria-labelledby="githubModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="githubModalLabel">GitHub Stats Overview</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Dynamic GitHub statistics highlighting contributions, reviews, discussions, and pull request activity.</p>
+          <img
+            src="https://github-stats.pavelpikta.com/api?username=pavelpikta&count_private=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&show_icons=true&theme=dracula&line_height=30"
+            alt="Detailed GitHub statistics" loading="lazy" class="img-fluid rounded-3 mt-3" id="github-stats-modal-img"
+            data-username="pavelpikta" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
