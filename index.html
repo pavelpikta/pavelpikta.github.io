@@ -277,7 +277,11 @@
         </div>
         <div class="glass-card p-4 p-lg-5 reveal">
           <div class="skills-icon-row text-center mb-4">
-            <img src="https://skillicons.dev/icons?i=ansible,aws,azure,bash,bitbucket,cloudflare,debian,docker,elasticsearch,git,github,githubactions,gitlab,jenkins,kubernetes,linux,md,mysql,nginx,py,redhat,terraform,ubuntu,vscode&perline=8" alt="Skills and technology icons" loading="lazy" class="img-fluid" />
+            <picture>
+              <source media="(min-width: 992px)" srcset="https://skillicons.dev/icons?i=ansible,aws,azure,bash,bitbucket,cloudflare,debian,docker,elasticsearch,git,github,githubactions,gitlab,jenkins,kubernetes,linux,md,mysql,nginx,py,redhat,terraform,ubuntu,vscode&perline=8" />
+              <source media="(min-width: 576px)" srcset="https://skillicons.dev/icons?i=ansible,aws,azure,bash,bitbucket,cloudflare,debian,docker,elasticsearch,git,github,githubactions,gitlab,jenkins,kubernetes,linux,md,mysql,nginx,py,redhat,terraform,ubuntu,vscode&perline=6" />
+              <img src="https://skillicons.dev/icons?i=ansible,aws,azure,bash,bitbucket,cloudflare,debian,docker,elasticsearch,git,github,githubactions,gitlab,jenkins,kubernetes,linux,md,mysql,nginx,py,redhat,terraform,ubuntu,vscode&perline=4" alt="Skills and technology icons" loading="lazy" class="skills-icons-img" width="320" height="288" />
+            </picture>
           </div>
           <div class="text-center">
             <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#skillsModal">View All Technologies <i class="bi bi-box-arrow-up-right ms-1"></i></button>
