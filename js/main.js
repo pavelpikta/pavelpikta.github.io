@@ -12,18 +12,35 @@
 
   const THEME_COLORS = { dark: '#6366f1', light: '#f8fafc' };
 
+  const STATS_COLORS = {
+    dark: {
+      bg_color: '0b0f1a',
+      text_color: 'e2e8f0',
+      title_color: '818cf8',
+      icon_color: '818cf8',
+      border_color: 'ffffff10',
+    },
+    light: {
+      bg_color: 'f8fafc',
+      text_color: '0f172a',
+      title_color: '6366f1',
+      icon_color: '6366f1',
+      border_color: '00000010',
+    },
+  };
+
   function buildGitHubStatsUrl(type, username, theme) {
-    const statsTheme = theme === 'dark' ? 'dracula' : 'default';
     const base = 'https://github-stats.pavelpikta.com';
+    const colors = STATS_COLORS[theme] || STATS_COLORS.dark;
 
     if (type === 'langs') {
       const params = new URLSearchParams({
         username,
         layout: 'compact',
-        theme: statsTheme,
-        hide_border: 'true',
         langs_count: '8',
-        hide: 'jupyter notebook,shell',
+        hide_title: 'true',
+        hide_border: 'true',
+        ...colors,
       });
       return `${base}/api/top-langs/?${params.toString()}`;
     }
@@ -33,29 +50,44 @@
       count_private: 'true',
       show: 'reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage',
       show_icons: 'true',
-      theme: statsTheme,
+      hide_title: 'true',
       hide_border: 'true',
       include_all_commits: 'true',
       rank_icon: 'percentile',
       line_height: '28',
+      ...colors,
     });
     return `${base}/api?${params.toString()}`;
   }
 
+  function setMetricValue(el, value) {
+    if (!el || value == null) return;
+    const num = Number(value);
+    if (Number.isNaN(num)) {
+      el.textContent = value;
+      return;
+    }
+    el.textContent = num;
+    el.classList.add('is-loaded');
+  }
+
   function updateGitHubStatsTheme(theme) {
     document.querySelectorAll('[data-github-stat]').forEach((img) => {
+      const panel = img.closest('.stats-panel-inner');
+      panel?.classList.remove('stats-panel-error');
       img.classList.remove('loaded');
-      img.closest('.stats-panel')?.classList.remove('stats-panel-error');
       const skeleton = document.querySelector(`[data-skeleton-for="${img.id}"]`);
       skeleton?.classList.remove('hidden');
+
       img.onload = () => {
         img.classList.add('loaded');
         skeleton?.classList.add('hidden');
       };
       img.onerror = () => {
         skeleton?.classList.add('hidden');
-        img.closest('.stats-panel')?.classList.add('stats-panel-error');
+        panel?.classList.add('stats-panel-error');
       };
+
       img.src = buildGitHubStatsUrl(img.dataset.githubStat, img.dataset.username, theme);
     });
   }
@@ -123,49 +155,81 @@
     });
   });
 
-  function initStatsImages() {
-    document.querySelectorAll('[data-github-stat]').forEach((img) => {
-      const skeleton = document.querySelector(`[data-skeleton-for="${img.id}"]`);
-      if (img.complete && img.naturalWidth > 0) {
-        img.classList.add('loaded');
-        skeleton?.classList.add('hidden');
-      }
-    });
-  }
-
-  async function loadGitHubProfile() {
+  async function loadGitHubData() {
     const username = config.githubUsername || 'pavelpikta';
-    const avatar = document.getElementById('github-profile-avatar');
-    const name = document.getElementById('github-profile-name');
-    const handle = document.getElementById('github-profile-handle');
-    const metricRepos = document.getElementById('metric-repos');
-    const metricFollowers = document.getElementById('metric-followers');
-    const metricFollowing = document.getElementById('metric-following');
+    const headers = { Accept: 'application/vnd.github+json' };
+
+    document.querySelectorAll('[data-fallback]').forEach((el) => {
+      if (el.dataset.fallback) setMetricValue(el, el.dataset.fallback);
+    });
 
     try {
-      const res = await fetch(`https://api.github.com/users/${username}`);
+      const res = await fetch(`https://api.github.com/users/${username}`, { headers });
       if (!res.ok) throw new Error();
       const user = await res.json();
 
+      const avatar = document.getElementById('github-profile-avatar');
+      const name = document.getElementById('github-profile-name');
       if (avatar) {
         avatar.src = user.avatar_url;
         avatar.alt = `${user.name || user.login} on GitHub`;
       }
       if (name) name.textContent = user.name || user.login;
-      if (handle) {
-        handle.innerHTML = `<i class="bi bi-github me-1"></i>@${user.login}`;
-        handle.href = user.html_url;
-      }
-      if (metricRepos) metricRepos.textContent = user.public_repos;
-      if (metricFollowers) metricFollowers.textContent = user.followers;
-      if (metricFollowing) metricFollowing.textContent = user.following;
+      setMetricValue(document.getElementById('metric-repos'), user.public_repos);
+      setMetricValue(document.getElementById('metric-followers'), user.followers);
+      setMetricValue(document.getElementById('metric-following'), user.following);
     } catch {
-      /* Keep fallback static content already in HTML */
+      /* Fallback values already set from data-fallback */
+    }
+
+    await loadRepos(username);
+  }
+
+  async function loadRepos(username) {
+    const grid = document.getElementById('repos-grid');
+    const loading = document.getElementById('repos-loading');
+    if (!grid) return;
+
+    username = username || config.githubUsername || 'pavelpikta';
+
+    try {
+      const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`, {
+        headers: { Accept: 'application/vnd.github+json' },
+      });
+      if (!res.ok) throw new Error('Failed to fetch repos');
+      const repos = await res.json();
+      loading?.remove();
+
+      repos.forEach((repo) => {
+        const col = document.createElement('div');
+        col.className = 'col-md-6 col-lg-4 reveal';
+        const desc = (repo.description || 'No description provided.').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+        const lang = repo.language ? `<span class="repo-lang"><span class="repo-lang-dot"></span>${repo.language}</span>` : '';
+        col.innerHTML = `
+          <article class="repo-card">
+            <div class="repo-card-top">
+              <i class="bi bi-book repo-card-icon"></i>
+              <h3><a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a></h3>
+            </div>
+            <p class="repo-desc">${desc}</p>
+            <div class="repo-meta">
+              ${lang}
+              <span><i class="bi bi-star-fill"></i>${repo.stargazers_count}</span>
+              <span><i class="bi bi-diagram-2"></i>${repo.forks_count}</span>
+            </div>
+          </article>`;
+        grid.appendChild(col);
+      });
+
+      animateRepos();
+    } catch {
+      if (loading) {
+        loading.innerHTML = `<span class="text-muted-custom">Could not load repositories. <a href="https://github.com/${username}?tab=repositories" target="_blank" rel="noopener noreferrer">View on GitHub</a></span>`;
+      }
     }
   }
 
-  loadGitHubProfile();
-  initStatsImages();
+  loadGitHubData();
 
   if (config.cloudflareAnalyticsToken) {
     const script = document.createElement('script');
@@ -207,44 +271,6 @@
         el.style.opacity = '1';
         el.style.transform = 'none';
       });
-    }
-  }
-
-  async function loadRepos() {
-    const grid = document.getElementById('repos-grid');
-    const loading = document.getElementById('repos-loading');
-    if (!grid) return;
-
-    const username = config.githubUsername || 'pavelpikta';
-
-    try {
-      const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
-      if (!res.ok) throw new Error('Failed to fetch repos');
-      const repos = await res.json();
-      loading?.remove();
-
-      repos.forEach((repo) => {
-        const col = document.createElement('div');
-        col.className = 'col-md-6 col-lg-4 reveal';
-        const desc = (repo.description || 'No description provided.').replace(/</g, '&lt;');
-        col.innerHTML = `
-          <article class="repo-card">
-            <h3><a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a></h3>
-            <p class="repo-desc">${desc}</p>
-            <div class="repo-meta">
-              ${repo.language ? `<span><i class="bi bi-circle-fill me-1" style="font-size:0.5rem;color:var(--bs-primary)"></i>${repo.language}</span>` : ''}
-              <span><i class="bi bi-star me-1"></i>${repo.stargazers_count}</span>
-              <span><i class="bi bi-diagram-2 me-1"></i>${repo.forks_count}</span>
-            </div>
-          </article>`;
-        grid.appendChild(col);
-      });
-
-      animateRepos();
-    } catch {
-      if (loading) {
-        loading.innerHTML = `<span class="text-muted-custom">Could not load repositories. <a href="https://github.com/${username}" target="_blank" rel="noopener noreferrer">View on GitHub</a></span>`;
-      }
     }
   }
 
@@ -301,13 +327,11 @@
       });
     });
 
-    loadRepos();
     window.addEventListener('load', () => ScrollTrigger.refresh());
   } else {
     showRevealElements();
     document.querySelectorAll('[data-count]').forEach((el) => {
       el.textContent = el.dataset.count + (el.dataset.suffix || '');
     });
-    loadRepos();
   }
 })();
