@@ -4,38 +4,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description"
-    content="Pavel Pikta — DevOps Engineer specializing in cloud infrastructure, automation, and security." />
+  <meta name="description" content="Pavel Pikta — DevOps Engineer specializing in cloud infrastructure, automation, and security." />
   <meta name="author" content="Pavel Pikta" />
   <meta name="theme-color" content="#6366f1" id="theme-color-meta" />
+  <link rel="canonical" href="https://pavelpikta.com/" />
   <meta property="og:title" content="Pavel Pikta · DevOps Engineer" />
-  <meta property="og:description"
-    content="DevOps Engineer specializing in cloud infrastructure, automation, and security." />
+  <meta property="og:description" content="DevOps Engineer specializing in cloud infrastructure, automation, and security." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pavelpikta.com/" />
   <meta property="og:image" content="https://pavelpikta.com/assets/images/avatar.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pavel Pikta · DevOps Engineer" />
+  <meta name="twitter:description" content="DevOps Engineer specializing in cloud infrastructure, automation, and security." />
+  <meta name="twitter:image" content="https://pavelpikta.com/assets/images/avatar.png" />
   <title>Pavel Pikta · DevOps Engineer</title>
 
+  <link rel="preload" href="assets/images/avatar.png" as="image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
-    rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/android-chrome-192x192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/android-chrome-512x512.png" />
   <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pavel Pikta",
+    "url": "https://pavelpikta.com",
+    "image": "https://pavelpikta.com/assets/images/avatar.png",
+    "jobTitle": "DevOps Engineer",
+    "description": "DevOps Engineer specializing in cloud infrastructure, automation, and security.",
+    "sameAs": [
+      "https://github.com/pavelpikta",
+      "https://www.linkedin.com/in/pavelpikta"
+    ],
+    "knowsAbout": ["DevOps", "AWS", "Terraform", "Ansible", "Kubernetes", "CI/CD", "Infrastructure as Code"]
+  }
+  </script>
 </head>
 
 <body>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#main-content">Skip to content</a>
+
   <div class="bg-mesh" aria-hidden="true">
     <div class="bg-blob bg-blob-1"></div>
     <div class="bg-blob bg-blob-2"></div>
@@ -47,17 +65,16 @@
       <a class="navbar-brand fw-bold" href="#hero">
         <span class="brand-dot"></span>Pavel<span class="text-accent">.</span>
       </a>
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#expertise">Expertise</a></li>
-          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
-          <li class="nav-item"><a class="nav-link" href="#stats">Stats</a></li>
+          <li class="nav-item"><a class="nav-link" href="#notes">Notes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item ms-lg-2">
             <button class="btn btn-icon" id="theme-toggle" type="button" aria-label="Toggle light/dark mode">
               <i class="bi bi-sun-fill theme-icon-light"></i>
@@ -80,33 +97,20 @@
                 <img src="assets/images/avatar.png" alt="" width="100" height="100" />
               </div>
             </div>
-            <div class="hero-badge mb-4">
+            <a href="#contact" class="hero-badge mb-4 text-decoration-none">
               <span class="pulse-dot"></span>
               Available for DevOps &amp; Cloud projects
-            </div>
+            </a>
             <h1 class="hero-title display-3 fw-bold mb-3">
               Hi there <span class="wave" role="img" aria-label="waving hand">👋</span><br />
               I&rsquo;m <span class="gradient-text">Pavel Pikta</span>
             </h1>
-            <p class="hero-subtitle lead mb-4">
-              DevOps Engineer — Cloud, Automation &amp; Security
-            </p>
-            <p class="hero-desc mb-5">
-              7+ years building resilient cloud-native infrastructure with Terraform, Ansible, and modern CI/CD
-              pipelines across AWS and beyond.
-            </p>
+            <p class="hero-subtitle lead mb-4">DevOps Engineer — Cloud, Automation &amp; Security</p>
+            <p class="hero-desc mb-5">7+ years building resilient cloud-native infrastructure with Terraform, Ansible, and modern CI/CD pipelines across AWS and beyond.</p>
             <div class="hero-actions d-flex flex-wrap align-items-center gap-3">
-              <a href="#about" class="btn btn-primary btn-lg px-4">
-                <i class="bi bi-person me-2" aria-hidden="true"></i>About Me
-              </a>
-              <a href="https://github.com/pavelpikta" class="btn btn-hero-secondary btn-lg px-4" target="_blank"
-                rel="noopener noreferrer">
-                <i class="bi bi-github me-2" aria-hidden="true"></i>GitHub
-              </a>
-              <a href="https://www.linkedin.com/in/pavelpikta" class="btn btn-hero-secondary btn-lg px-4"
-                target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-linkedin me-2" aria-hidden="true"></i>LinkedIn
-              </a>
+              <a href="#contact" class="btn btn-primary btn-lg px-4"><i class="bi bi-envelope me-2" aria-hidden="true"></i>Get in Touch</a>
+              <a href="https://github.com/pavelpikta" class="btn btn-hero-secondary btn-lg px-4" target="_blank" rel="noopener noreferrer"><i class="bi bi-github me-2" aria-hidden="true"></i>GitHub</a>
+              <a href="https://www.linkedin.com/in/pavelpikta" class="btn btn-hero-secondary btn-lg px-4" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin me-2" aria-hidden="true"></i>LinkedIn</a>
             </div>
           </div>
           <div class="col-lg-5 d-none d-lg-flex justify-content-center">
@@ -136,46 +140,129 @@
           <div class="col-md-4 reveal">
             <div class="stat-card h-100">
               <div class="stat-icon"><i class="bi bi-calendar-check"></i></div>
-              <div class="stat-value">7+</div>
+              <div class="stat-value" data-count="7" data-suffix="+">0</div>
               <div class="stat-label">Years Experience</div>
             </div>
           </div>
           <div class="col-md-4 reveal">
             <div class="stat-card h-100">
               <div class="stat-icon"><i class="bi bi-cloud-arrow-up"></i></div>
-              <div class="stat-value">Cloud</div>
-              <div class="stat-label">Native Infrastructure</div>
+              <div class="stat-value" data-count="50" data-suffix="+">0</div>
+              <div class="stat-label">Cloud Projects Delivered</div>
             </div>
           </div>
           <div class="col-md-4 reveal">
             <div class="stat-card h-100">
               <div class="stat-icon"><i class="bi bi-shield-check"></i></div>
-              <div class="stat-value">Security</div>
-              <div class="stat-label">First Architecture</div>
+              <div class="stat-value" data-count="100" data-suffix="%">0</div>
+              <div class="stat-label">Security-First Approach</div>
             </div>
           </div>
           <div class="col-12 reveal">
             <div class="glass-card p-4 p-lg-5">
-              <div class="row align-items-center g-4">
-                <div class="col-lg-8">
-                  <p class="mb-3">
-                    <strong>DevOps &amp; Systems Engineer</strong> specializing in Infrastructure as Code, configuration
-                    management, and advanced CI/CD pipelines with GitLab CI, GitHub Actions, and Jenkins.
-                  </p>
-                  <ul class="about-list mb-0">
-                    <li>Cloud-native infrastructure automation &amp; optimization</li>
-                    <li>AWS, Terraform, Ansible, Docker expertise</li>
-                    <li>Multi-cloud architectures with AWS focus</li>
-                    <li>Monitoring, logging &amp; security (ELK, Grafana)</li>
-                  </ul>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#aboutModal">
-                    Read Full Bio <i class="bi bi-arrow-right ms-1"></i>
-                  </button>
-                </div>
-              </div>
+              <p class="mb-3"><strong>DevOps &amp; Systems Engineer</strong> building and securing cloud-native platforms with Terraform, Ansible, and modern CI/CD tooling.</p>
+              <p class="text-muted-custom mb-4">I help teams ship faster with reproducible infrastructure, observable systems, and automation that scales across AWS and hybrid environments.</p>
+              <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#aboutModal">Read Full Bio <i class="bi bi-arrow-right ms-1"></i></button>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section-padding" id="projects">
+      <div class="container">
+        <div class="section-header text-center mb-5 reveal">
+          <span class="section-label">Portfolio</span>
+          <h2 class="section-title">Featured Projects</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 reveal">
+            <article class="project-card h-100">
+              <div class="project-tags"><span class="badge-tech">AWS</span><span class="badge-tech">Terraform</span><span class="badge-tech">Security</span></div>
+              <h3>AWS Account Migration</h3>
+              <p class="text-muted-custom">Migrated multiple production workloads from shared AWS accounts to isolated, dedicated environments.</p>
+              <ul class="project-outcomes">
+                <li>Improved security posture &amp; cost allocation</li>
+                <li>Zero-downtime migration strategy</li>
+              </ul>
+              <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#projectModal1">Case Study</button>
+            </article>
+          </div>
+          <div class="col-md-6 reveal">
+            <article class="project-card h-100">
+              <div class="project-tags"><span class="badge-tech">Ansible</span><span class="badge-tech">Python</span></div>
+              <h3>Ansible Roles Framework</h3>
+              <p class="text-muted-custom">Built reusable Ansible roles and collections for cross-team infrastructure deployment.</p>
+              <ul class="project-outcomes">
+                <li>Reduced provisioning time by 60%</li>
+                <li>Standardized config across teams</li>
+              </ul>
+              <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#projectModal2">Case Study</button>
+            </article>
+          </div>
+          <div class="col-md-6 reveal">
+            <article class="project-card h-100">
+              <div class="project-tags"><span class="badge-tech">GitLab CI</span><span class="badge-tech">GitHub Actions</span><span class="badge-tech">Jenkins</span></div>
+              <h3>CI/CD Pipeline Optimization</h3>
+              <p class="text-muted-custom">Designed and integrated CI/CD pipelines across multiple tooling platforms.</p>
+              <ul class="project-outcomes">
+                <li>Faster, more reliable releases</li>
+                <li>Automated testing &amp; deployment gates</li>
+              </ul>
+              <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#projectModal3">Case Study</button>
+            </article>
+          </div>
+          <div class="col-md-6 reveal">
+            <article class="project-card h-100">
+              <div class="project-tags"><span class="badge-tech">Grafana</span><span class="badge-tech">ELK</span><span class="badge-tech">New Relic</span></div>
+              <h3>Observability Platform</h3>
+              <p class="text-muted-custom">Deployed multi-tier monitoring and logging for proactive incident response.</p>
+              <ul class="project-outcomes">
+                <li>Reduced MTTR significantly</li>
+                <li>Unified dashboards &amp; alerting</li>
+              </ul>
+              <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#projectModal4">Case Study</button>
+            </article>
+          </div>
+        </div>
+
+        <!-- Architecture diagram -->
+        <div class="section-header text-center mb-4 mt-5 pt-4 reveal" id="architecture">
+          <span class="section-label">Architecture</span>
+          <h2 class="section-title h3">CI/CD &amp; Cloud Pipeline</h2>
+        </div>
+        <div class="glass-card p-4 p-lg-5 reveal">
+          <div class="arch-diagram" role="img" aria-label="Diagram showing developers pushing code to Git, CI/CD pipeline building and testing, deploying to AWS via Terraform, with monitoring through Grafana and ELK">
+            <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" class="arch-svg">
+              <defs>
+                <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#818cf8"/></linearGradient>
+                <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#6366f1"/></marker>
+              </defs>
+              <rect x="20" y="70" width="120" height="80" rx="12" fill="url(#g1)" opacity="0.9"/>
+              <text x="80" y="105" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">Git Push</text>
+              <text x="80" y="125" text-anchor="middle" fill="#fff" font-size="11" opacity="0.85">GitHub / GitLab</text>
+              <line x1="140" y1="110" x2="190" y2="110" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow)"/>
+              <rect x="190" y="70" width="130" height="80" rx="12" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1.5"/>
+              <text x="255" y="105" text-anchor="middle" fill="currentColor" font-size="13" font-weight="600">CI/CD</text>
+              <text x="255" y="125" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.7">Build · Test · Scan</text>
+              <line x1="320" y1="110" x2="370" y2="110" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow)"/>
+              <rect x="370" y="70" width="130" height="80" rx="12" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1.5"/>
+              <text x="435" y="105" text-anchor="middle" fill="currentColor" font-size="13" font-weight="600">Terraform</text>
+              <text x="435" y="125" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.7">IaC Deploy</text>
+              <line x1="500" y1="110" x2="550" y2="110" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow)"/>
+              <rect x="550" y="55" width="140" height="110" rx="12" fill="rgba(245,158,11,0.12)" stroke="#f59e0b" stroke-width="1.5"/>
+              <text x="620" y="95" text-anchor="middle" fill="currentColor" font-size="13" font-weight="600">AWS Cloud</text>
+              <text x="620" y="115" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.7">EC2 · EKS · RDS</text>
+              <text x="620" y="135" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.7">VPC · IAM · S3</text>
+              <line x1="620" y1="165" x2="620" y2="195" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow)"/>
+              <rect x="550" y="175" width="140" height="40" rx="10" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1.5"/>
+              <text x="620" y="200" text-anchor="middle" fill="currentColor" font-size="12" font-weight="600">Grafana · ELK</text>
+              <rect x="730" y="70" width="150" height="80" rx="12" fill="rgba(99,102,241,0.08)" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4"/>
+              <text x="805" y="105" text-anchor="middle" fill="currentColor" font-size="13" font-weight="600">Ansible</text>
+              <text x="805" y="125" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.7">Config Mgmt</text>
+              <line x1="690" y1="110" x2="730" y2="110" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4" marker-end="url(#arrow)"/>
+            </svg>
           </div>
         </div>
       </div>
@@ -190,14 +277,10 @@
         </div>
         <div class="glass-card p-4 p-lg-5 reveal">
           <div class="skills-icon-row text-center mb-4">
-            <img
-              src="https://skillicons.dev/icons?i=ansible,aws,azure,bash,bitbucket,cloudflare,debian,docker,elasticsearch,git,github,githubactions,gitlab,jenkins,kubernetes,linux,md,mysql,nginx,py,redhat,terraform,ubuntu,vscode&perline=8"
-              alt="Skills and technology icons" loading="lazy" class="img-fluid" />
+            <img src="https://skillicons.dev/icons?i=ansible,aws,azure,bash,bitbucket,cloudflare,debian,docker,elasticsearch,git,github,githubactions,gitlab,jenkins,kubernetes,linux,md,mysql,nginx,py,redhat,terraform,ubuntu,vscode&perline=8" alt="Skills and technology icons" loading="lazy" class="img-fluid" />
           </div>
           <div class="text-center">
-            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#skillsModal">
-              View All Technologies <i class="bi bi-box-arrow-up-right ms-1"></i>
-            </button>
+            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#skillsModal">View All Technologies <i class="bi bi-box-arrow-up-right ms-1"></i></button>
           </div>
         </div>
       </div>
@@ -212,56 +295,50 @@
         </div>
         <div class="row g-4">
           <div class="col-md-6 col-lg-4 reveal">
-            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal"
-              data-bs-target="#expertiseModal">
+            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal" data-bs-target="#expertiseModalIac">
               <div class="feature-icon"><i class="bi bi-diagram-3"></i></div>
               <h3>Infrastructure as Code</h3>
-              <p>Reproducible, version-controlled deployments with Terraform across multi-cloud environments.</p>
+              <p>Reproducible, version-controlled deployments with Terraform.</p>
               <span class="feature-link">Learn more <i class="bi bi-arrow-right"></i></span>
             </article>
           </div>
           <div class="col-md-6 col-lg-4 reveal">
-            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal"
-              data-bs-target="#expertiseModal">
+            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal" data-bs-target="#expertiseModalCicd">
               <div class="feature-icon"><i class="bi bi-arrow-repeat"></i></div>
               <h3>CI/CD Pipelines</h3>
-              <p>Design, integration, and optimization of Jenkins, GitLab CI, and GitHub Actions workflows.</p>
+              <p>Jenkins, GitLab CI, and GitHub Actions workflows.</p>
               <span class="feature-link">Learn more <i class="bi bi-arrow-right"></i></span>
             </article>
           </div>
           <div class="col-md-6 col-lg-4 reveal">
-            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal"
-              data-bs-target="#expertiseModal">
+            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal" data-bs-target="#expertiseModalK8s">
               <div class="feature-icon"><i class="bi bi-box-seam"></i></div>
               <h3>Containers &amp; K8s</h3>
-              <p>Container orchestration and management with Docker and Kubernetes at scale.</p>
+              <p>Docker and Kubernetes at scale.</p>
               <span class="feature-link">Learn more <i class="bi bi-arrow-right"></i></span>
             </article>
           </div>
           <div class="col-md-6 col-lg-4 reveal">
-            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal"
-              data-bs-target="#expertiseModal">
+            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal" data-bs-target="#expertiseModalObs">
               <div class="feature-icon"><i class="bi bi-graph-up"></i></div>
               <h3>Observability</h3>
-              <p>Monitoring and logging with Grafana, ELK, and New Relic for actionable insights.</p>
+              <p>Grafana, ELK, and New Relic insights.</p>
               <span class="feature-link">Learn more <i class="bi bi-arrow-right"></i></span>
             </article>
           </div>
           <div class="col-md-6 col-lg-4 reveal">
-            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal"
-              data-bs-target="#expertiseModal">
+            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal" data-bs-target="#expertiseModalAuto">
               <div class="feature-icon"><i class="bi bi-robot"></i></div>
               <h3>Automation</h3>
-              <p>Configuration management with Ansible plus scripting in Python and Bash.</p>
+              <p>Ansible, Python, and Bash scripting.</p>
               <span class="feature-link">Learn more <i class="bi bi-arrow-right"></i></span>
             </article>
           </div>
           <div class="col-md-6 col-lg-4 reveal">
-            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal"
-              data-bs-target="#expertiseModal">
+            <article class="feature-card h-100" tabindex="0" role="button" data-bs-toggle="modal" data-bs-target="#expertiseModalSec">
               <div class="feature-icon"><i class="bi bi-lock"></i></div>
               <h3>Security &amp; Compliance</h3>
-              <p>Security-first architecture, hardening, and automated compliance workflows.</p>
+              <p>Hardening and automated compliance.</p>
               <span class="feature-link">Learn more <i class="bi bi-arrow-right"></i></span>
             </article>
           </div>
@@ -281,54 +358,139 @@
             <div class="glass-card achievement-card h-100 p-4 p-lg-5">
               <div class="achievement-number">01</div>
               <h3>AWS Account Migration</h3>
-              <p>Led migration of multiple solutions from shared AWS accounts to isolated, production-grade dedicated
-                accounts — improving security posture and cost allocation.</p>
+              <p class="text-muted-custom">Led migration to isolated, production-grade AWS accounts.</p>
             </div>
           </div>
           <div class="col-lg-6 reveal">
             <div class="glass-card achievement-card h-100 p-4 p-lg-5">
               <div class="achievement-number">02</div>
               <h3>Ansible Roles Framework</h3>
-              <p>Developed extensible and reusable Ansible roles and collections, enabling independent deployment and
-                configuration management across teams.</p>
+              <p class="text-muted-custom">Reusable roles enabling cross-team deployment independence.</p>
             </div>
           </div>
           <div class="col-12 reveal">
-            <div
-              class="glass-card p-4 p-lg-5 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+            <div class="glass-card p-4 p-lg-5 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
               <div>
                 <h3 class="h5 mb-1">Open Source Contributor</h3>
-                <p class="text-muted-custom mb-0">Active member of <a href="https://github.com/lean-delivery"
-                    target="_blank" rel="noopener noreferrer">@lean-delivery</a> — DevOps tools and best practices.</p>
+                <p class="text-muted-custom mb-0">Active member of <a href="https://github.com/lean-delivery" target="_blank" rel="noopener noreferrer">@lean-delivery</a>.</p>
               </div>
-              <button class="btn btn-primary flex-shrink-0" type="button" data-bs-toggle="modal"
-                data-bs-target="#achievementsModal">
-                All Achievements <i class="bi bi-trophy ms-1"></i>
-              </button>
+              <button class="btn btn-primary flex-shrink-0" type="button" data-bs-toggle="modal" data-bs-target="#achievementsModal">All Achievements <i class="bi bi-trophy ms-1"></i></button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GitHub Stats -->
+    <!-- GitHub Stats & Repos -->
     <section class="section-padding" id="stats">
       <div class="container">
         <div class="section-header text-center mb-5 reveal">
           <span class="section-label">Activity</span>
-          <h2 class="section-title">GitHub Stats</h2>
+          <h2 class="section-title">GitHub</h2>
+          <p class="text-muted-custom mt-3">Contributions, languages, and open-source activity</p>
         </div>
-        <div class="glass-card p-4 p-lg-5 reveal">
-          <div class="stats-wrapper text-center">
-            <img
-              src="https://github-stats.pavelpikta.com/api?username=pavelpikta&count_private=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&show_icons=true&theme=dracula&line_height=30"
-              alt="GitHub contribution statistics for pavelpikta" loading="lazy" class="stats-img img-fluid"
-              id="github-stats-img" data-username="pavelpikta" />
+
+        <div class="github-profile-bar glass-card p-4 mb-4 reveal" id="github-profile-bar" hidden>
+          <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3">
+            <img src="" alt="" class="github-profile-avatar" id="github-profile-avatar" width="64" height="64" />
+            <div class="flex-grow-1">
+              <h3 class="h5 mb-0" id="github-profile-name"></h3>
+              <a href="https://github.com/pavelpikta" class="text-muted-custom small" id="github-profile-handle" target="_blank" rel="noopener noreferrer">@pavelpikta</a>
+            </div>
+            <div class="github-metrics d-flex flex-wrap gap-3" id="github-metrics"></div>
           </div>
-          <div class="text-center mt-4">
-            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#githubModal">
-              Full Stats Overview <i class="bi bi-bar-chart ms-1"></i>
-            </button>
+        </div>
+
+        <div class="row g-4 mb-4">
+          <div class="col-lg-7 reveal">
+            <div class="stats-panel glass-card p-3 p-lg-4 h-100">
+              <h3 class="stats-panel-title"><i class="bi bi-bar-chart-line me-2"></i>Profile Statistics</h3>
+              <div class="stats-wrapper position-relative">
+                <div class="stats-skeleton" data-skeleton-for="github-stats-profile" aria-hidden="true"></div>
+                <img src="" alt="GitHub profile statistics for pavelpikta" loading="lazy" class="stats-img img-fluid w-100" id="github-stats-profile" data-github-stat="profile" data-username="pavelpikta" />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 reveal">
+            <div class="stats-panel glass-card p-3 p-lg-4 h-100">
+              <h3 class="stats-panel-title"><i class="bi bi-pie-chart me-2"></i>Top Languages</h3>
+              <div class="stats-wrapper position-relative">
+                <div class="stats-skeleton stats-skeleton-sm" data-skeleton-for="github-stats-langs" aria-hidden="true"></div>
+                <img src="" alt="Most used programming languages on GitHub" loading="lazy" class="stats-img img-fluid w-100" id="github-stats-langs" data-github-stat="langs" data-username="pavelpikta" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mb-5 reveal">
+          <a href="https://github.com/pavelpikta" class="btn btn-outline-primary btn-lg" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-github me-2"></i>View Full Profile
+          </a>
+        </div>
+
+        <div class="section-header text-center mb-4 reveal">
+          <h2 class="section-title h4">Recent Repositories</h2>
+        </div>
+        <div class="row g-4" id="repos-grid">
+          <div class="col-12 text-center text-muted-custom" id="repos-loading"><span class="spinner-border spinner-border-sm me-2"></span>Loading repositories…</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes / Blog -->
+    <section class="section-padding section-alt" id="notes">
+      <div class="container">
+        <div class="section-header text-center mb-5 reveal">
+          <span class="section-label">Knowledge</span>
+          <h2 class="section-title">DevOps Notes</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4 reveal">
+            <article class="note-card h-100">
+              <span class="note-date">Terraform</span>
+              <h3>Module Design Best Practices</h3>
+              <p class="text-muted-custom">Composable modules, remote state, and workspace strategies for team scale.</p>
+              <button class="btn btn-sm btn-link px-0" type="button" data-bs-toggle="modal" data-bs-target="#noteModal1">Read note <i class="bi bi-arrow-right"></i></button>
+            </article>
+          </div>
+          <div class="col-md-4 reveal">
+            <article class="note-card h-100">
+              <span class="note-date">Ansible</span>
+              <h3>Role Design Patterns</h3>
+              <p class="text-muted-custom">Building reusable roles with clear variable contracts and Molecule testing.</p>
+              <button class="btn btn-sm btn-link px-0" type="button" data-bs-toggle="modal" data-bs-target="#noteModal2">Read note <i class="bi bi-arrow-right"></i></button>
+            </article>
+          </div>
+          <div class="col-md-4 reveal">
+            <article class="note-card h-100">
+              <span class="note-date">CI/CD</span>
+              <h3>GitHub Actions for Infrastructure</h3>
+              <p class="text-muted-custom">Plan/apply workflows, OIDC auth to AWS, and environment protection rules.</p>
+              <button class="btn btn-sm btn-link px-0" type="button" data-bs-toggle="modal" data-bs-target="#noteModal3">Read note <i class="bi bi-arrow-right"></i></button>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section-padding" id="contact">
+      <div class="container">
+        <div class="section-header text-center mb-5 reveal">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="text-muted-custom mt-3">Open to DevOps consulting, cloud migrations, and infrastructure projects.</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-7 reveal">
+            <div class="glass-card p-4 p-lg-5 text-center">
+              <p class="text-muted-custom mb-4">Reach out via email or connect on social platforms.</p>
+              <div class="d-flex flex-wrap gap-3 justify-content-center">
+                <a href="mailto:contact@pavelpikta.com" class="btn btn-primary btn-lg" id="contact-email-link"><i class="bi bi-envelope me-2"></i>Email</a>
+                <a href="https://www.linkedin.com/in/pavelpikta" class="btn btn-hero-secondary btn-lg" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin me-2"></i>LinkedIn</a>
+                <a href="https://github.com/pavelpikta" class="btn btn-hero-secondary btn-lg" target="_blank" rel="noopener noreferrer"><i class="bi bi-github me-2"></i>GitHub</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -341,56 +503,43 @@
       <div class="row align-items-center gy-4">
         <div class="col-md-6">
           <p class="footer-brand mb-1 fw-bold">Pavel Pikta</p>
-          <p class="text-muted-custom mb-0 small">DevOps Engineer · Cloud · Automation · Security</p>
+          <p class="text-muted-custom mb-2 small">DevOps Engineer · Cloud · Automation · Security</p>
+          <p class="deploy-status small mb-0"><span class="pulse-dot"></span> Hosted on GitHub Pages · Deployed via GitHub Actions</p>
         </div>
         <div class="col-md-6">
           <div class="footer-social d-flex justify-content-md-end gap-3">
-            <a href="https://github.com/pavelpikta" aria-label="GitHub" target="_blank" rel="noopener noreferrer"
-              class="social-btn">
-              <i class="bi bi-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/pavelpikta" aria-label="LinkedIn" target="_blank"
-              rel="noopener noreferrer" class="social-btn">
-              <i class="bi bi-linkedin"></i>
-            </a>
+            <a href="https://github.com/pavelpikta" aria-label="GitHub" target="_blank" rel="noopener noreferrer" class="social-btn"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/pavelpikta" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" class="social-btn"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
         <div class="col-12">
           <hr class="footer-divider" />
-          <p class="text-center text-muted-custom small mb-0">
-            &copy; <span id="year"></span> Pavel Pikta.
-          </p>
+          <p class="text-center text-muted-custom small mb-0">&copy; <span id="year"></span> Pavel Pikta · <a href="#stats">Stats</a></p>
         </div>
       </div>
     </div>
   </footer>
 
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
   <!-- Modals -->
   <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="aboutModalLabel">About Me</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
+        <div class="modal-header"><h5 class="modal-title" id="aboutModalLabel">About Me</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
         <div class="modal-body">
-          <p><strong>DevOps &amp; Systems Engineer with 7+ years of hands-on experience</strong> building, automating,
-            and securing modern cloud-native infrastructures. I specialize in Infrastructure as Code with Terraform,
-            configuration management with Ansible, and the design of advanced CI/CD pipelines using GitLab CI, GitHub
-            Actions, and Jenkins.</p>
-          <p>My expertise spans <strong>multi-cloud architectures (AWS focus)</strong>, Docker containerization, network
-            automation, and team enablement for scalable software delivery.</p>
+          <p><strong>DevOps &amp; Systems Engineer with 7+ years of hands-on experience</strong> building, automating, and securing modern cloud-native infrastructures.</p>
+          <p>Specializing in Terraform, Ansible, and CI/CD with GitLab CI, GitHub Actions, and Jenkins across multi-cloud AWS-focused architectures.</p>
           <h6 class="text-accent mt-4">Key Strengths</h6>
           <ul>
-            <li>Architecting resilient, observable, and secure systems for e-commerce and SaaS</li>
-            <li>Migrating legacy solutions to isolated AWS environments using best practices</li>
-            <li>Developing reusable Ansible roles and libraries to boost team productivity</li>
-            <li>Integrating monitoring, logging, and security solutions (ELK, Grafana, New Relic)</li>
-            <li>Automating complex deployment, networking and security compliance tasks</li>
-            <li>Excelling in fast-paced, multicultural engineering teams</li>
+            <li>Resilient, observable systems for e-commerce and SaaS</li>
+            <li>AWS migrations with security best practices</li>
+            <li>Reusable Ansible roles and libraries</li>
+            <li>ELK, Grafana, New Relic integration</li>
+            <li>Security compliance automation</li>
+            <li>Multicultural agile team collaboration</li>
           </ul>
-          <p class="mb-0">Beyond technology, I am committed to <strong>continuous improvement</strong>, performance
-            tuning, and knowledge sharing through both documentation and mentorship.</p>
+          <p class="mb-0">Committed to continuous improvement, performance tuning, and mentorship through documentation and knowledge sharing.</p>
         </div>
       </div>
     </div>
@@ -399,117 +548,46 @@
   <div class="modal fade" id="skillsModal" tabindex="-1" aria-labelledby="skillsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="skillsModalLabel">Skills &amp; Technologies</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
+        <div class="modal-header"><h5 class="modal-title" id="skillsModalLabel">Skills &amp; Technologies</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
         <div class="modal-body">
-          <p>I have proficiency in diverse tools and technologies in infrastructure automation, cloud platforms,
-            configuration management, container orchestration, monitoring, and scripting.</p>
-          <h6 class="text-accent mt-3">Core Technologies</h6>
+          <h6 class="text-accent">Core Technologies</h6>
           <ul>
-            <li><strong>IaC &amp; Configuration:</strong> Terraform, Ansible</li>
-            <li><strong>Cloud Platforms:</strong> AWS, Azure</li>
-            <li><strong>Containers &amp; Orchestration:</strong> Docker, Kubernetes</li>
-            <li><strong>Monitoring &amp; Logging:</strong> ELK Stack, Grafana, New Relic, Elastic Cloud Enterprise</li>
+            <li><strong>IaC:</strong> Terraform, Ansible</li>
+            <li><strong>Cloud:</strong> AWS, Azure</li>
+            <li><strong>Containers:</strong> Docker, Kubernetes</li>
+            <li><strong>Monitoring:</strong> ELK, Grafana, New Relic</li>
             <li><strong>CI/CD:</strong> Jenkins, GitLab CI, GitHub Actions</li>
-            <li><strong>Scripting &amp; Automation:</strong> Bash, Python, Groovy</li>
-            <li><strong>Version Control:</strong> Git, GitHub, GitLab, Bitbucket</li>
-            <li><strong>Networking &amp; Security:</strong> Network automation, security hardening, compliance</li>
+            <li><strong>Scripting:</strong> Bash, Python, Groovy</li>
+            <li><strong>VCS:</strong> Git, GitHub, GitLab, Bitbucket</li>
+            <li><strong>Security:</strong> Hardening, compliance, network automation</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="expertiseModal" tabindex="-1" aria-labelledby="expertiseModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="expertiseModalLabel">Expertise Areas</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h6 class="text-accent">Design &amp; Architecture</h6>
-          <ul>
-            <li>Infrastructure as Code (Terraform) for reproducible, version-controlled deployments</li>
-            <li>CI/CD pipelines (Jenkins, GitLab CI, GitHub Actions) — design, integration, optimization</li>
-            <li>Container orchestration and management with Docker &amp; Kubernetes</li>
-            <li>Multi-cloud and hybrid-cloud strategies with focus on AWS</li>
-          </ul>
-          <h6 class="text-accent mt-4">Operations &amp; Automation</h6>
-          <ul>
-            <li>Configuration management and system provisioning with Ansible</li>
-            <li>Monitoring and observability (Grafana, ELK, New Relic)</li>
-            <li>Logs aggregation and analysis for troubleshooting</li>
-            <li>Security hardening and compliance automation</li>
-            <li>Network automation and optimization</li>
-          </ul>
-          <h6 class="text-accent mt-4">Team &amp; Processes</h6>
-          <ul class="mb-0">
-            <li>Mentoring and knowledge transfer within engineering teams</li>
-            <li>Documentation and wiki management (Confluence, GitLab Pages)</li>
-            <li>Cross-functional collaboration in agile environments</li>
-            <li>Security-first principles in all infrastructure decisions</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="modal fade" id="expertiseModalIac" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Infrastructure as Code</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>Terraform modules for reproducible AWS infrastructure — VPC, EKS, RDS, IAM with remote state in S3 and DynamoDB locking.</p><ul><li>Multi-environment workspace strategy</li><li>Policy-as-code with Sentinel/OPA</li><li>Drift detection and automated remediation</li></ul></div></div></div></div>
+  <div class="modal fade" id="expertiseModalCicd" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">CI/CD Pipelines</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>End-to-end pipeline design from commit to production with automated testing, security scanning, and gated deployments.</p><ul><li>GitLab CI &amp; GitHub Actions multi-stage pipelines</li><li>Jenkins shared libraries for DRY pipelines</li><li>Artifact management and rollback strategies</li></ul></div></div></div></div>
+  <div class="modal fade" id="expertiseModalK8s" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Containers &amp; Kubernetes</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>Containerization strategy from Docker Compose to production EKS clusters with Helm and GitOps workflows.</p><ul><li>EKS cluster provisioning and node group management</li><li>Helm charts and Kustomize overlays</li><li>Resource limits, HPA, and network policies</li></ul></div></div></div></div>
+  <div class="modal fade" id="expertiseModalObs" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Observability</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>Full-stack observability with metrics, logs, and traces for proactive incident management.</p><ul><li>Grafana dashboards and alert routing</li><li>ELK stack deployment and log parsing</li><li>SLO/SLI definition and error budgets</li></ul></div></div></div></div>
+  <div class="modal fade" id="expertiseModalAuto" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Automation</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>Configuration management and scripting to eliminate toil and enforce consistency.</p><ul><li>Ansible roles, collections, and dynamic inventory</li><li>Python/Bash tooling for operational tasks</li><li>Scheduled automation with cron and CI triggers</li></ul></div></div></div></div>
+  <div class="modal fade" id="expertiseModalSec" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Security &amp; Compliance</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>Security-first infrastructure with automated compliance checks and least-privilege access.</p><ul><li>IAM policy design and SCP guardrails</li><li>Security scanning in CI (SAST, container scans)</li><li>CIS benchmarks and hardening automation</li></ul></div></div></div></div>
 
-  <div class="modal fade" id="achievementsModal" tabindex="-1" aria-labelledby="achievementsModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="achievementsModalLabel">Key Achievements</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h6 class="text-accent">Major Projects</h6>
-          <ul>
-            <li><strong>AWS Account Migration:</strong> Led migration of multiple solutions from shared AWS accounts to
-              isolated, production-grade dedicated accounts</li>
-            <li><strong>Ansible Roles Framework:</strong> Developed extensible and reusable Ansible roles and
-              collections for cross-team deployment</li>
-            <li>Implemented comprehensive CI/CD pipelines reducing deployment time and improving release reliability
-            </li>
-            <li>Designed and deployed multi-tier monitoring solutions improving observability and incident response
-              times</li>
-          </ul>
-          <h6 class="text-accent mt-4">Community &amp; Contribution</h6>
-          <p class="mb-0">Active member and contributor of the <a href="https://github.com/lean-delivery"
-              target="_blank" rel="noopener noreferrer"><strong>@lean-delivery</strong></a> organization, working on
-            open-source DevOps tools and best practices.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="modal fade" id="achievementsModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Key Achievements</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><h6 class="text-accent">Major Projects</h6><ul><li><strong>AWS Account Migration:</strong> Isolated production-grade dedicated accounts</li><li><strong>Ansible Roles Framework:</strong> Cross-team reusable collections</li><li>CI/CD pipelines reducing deployment time and improving reliability</li><li>Multi-tier monitoring improving observability and MTTR</li></ul><h6 class="text-accent mt-4">Community</h6><p class="mb-0">Contributor at <a href="https://github.com/lean-delivery" target="_blank" rel="noopener noreferrer">@lean-delivery</a>.</p></div></div></div></div>
 
-  <div class="modal fade" id="githubModal" tabindex="-1" aria-labelledby="githubModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="githubModalLabel">GitHub Stats Overview</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Dynamic GitHub statistics highlighting contributions, reviews, discussions, and pull request activity.</p>
-          <img
-            src="https://github-stats.pavelpikta.com/api?username=pavelpikta&count_private=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&show_icons=true&theme=dracula&line_height=30"
-            alt="Detailed GitHub statistics" loading="lazy" class="img-fluid rounded-3 mt-3" id="github-stats-modal-img"
-            data-username="pavelpikta" />
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="modal fade" id="projectModal1" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">AWS Account Migration</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p><strong>Problem:</strong> Multiple production solutions shared AWS accounts, creating security and billing challenges.</p><p><strong>Approach:</strong> Terraform-based landing zones, SCP policies, phased workload migration with rollback plans.</p><p><strong>Result:</strong> Isolated accounts per product line, improved cost allocation, and stronger security boundaries.</p></div></div></div></div>
+  <div class="modal fade" id="projectModal2" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Ansible Roles Framework</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p><strong>Problem:</strong> Teams duplicated Ansible playbooks with inconsistent configurations.</p><p><strong>Approach:</strong> Modular roles with documented variable contracts, Molecule tests, and Galaxy-compatible collections.</p><p><strong>Result:</strong> 60% faster provisioning, standardized deployments across teams.</p></div></div></div></div>
+  <div class="modal fade" id="projectModal3" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">CI/CD Pipeline Optimization</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p><strong>Problem:</strong> Manual deployments caused slow releases and inconsistent environments.</p><p><strong>Approach:</strong> Multi-stage pipelines with automated tests, security scans, and environment promotion gates.</p><p><strong>Result:</strong> Faster releases, fewer production incidents, full deployment audit trail.</p></div></div></div></div>
+  <div class="modal fade" id="projectModal4" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Observability Platform</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p><strong>Problem:</strong> Limited visibility into production systems delayed incident response.</p><p><strong>Approach:</strong> Grafana dashboards, ELK log aggregation, New Relic APM, and PagerDuty integration.</p><p><strong>Result:</strong> Significantly reduced MTTR and proactive alerting before user impact.</p></div></div></div></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <div class="modal fade" id="noteModal1" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Terraform Module Best Practices</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>Design modules with a single responsibility — one module per logical resource group (VPC, EKS cluster, RDS instance). Use consistent input variable naming and output contracts so consuming teams know exactly what they get.</p><p>Store state remotely in S3 with DynamoDB locking. Use workspaces or separate state files per environment rather than duplicating code. Tag all resources with environment, owner, and cost center for accountability.</p><p>Pin provider versions and run <code>terraform plan</code> in CI on every pull request before merge.</p></div></div></div></div>
+  <div class="modal fade" id="noteModal2" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Ansible Role Design Patterns</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>Structure roles with defaults, vars, tasks, handlers, and templates clearly separated. Document every variable in <code>README.md</code> with type, default, and example values.</p><p>Use role dependencies sparingly — prefer composition in playbooks. Test roles with Molecule against multiple OS targets in CI. Version collections semantically and publish to a private Galaxy server for team consumption.</p></div></div></div></div>
+  <div class="modal fade" id="noteModal3" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">GitHub Actions for Infrastructure</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>Use OIDC federation to assume AWS IAM roles — never store long-lived credentials in secrets. Split workflows into plan (on PR) and apply (on merge to main) with environment protection rules requiring approval for production.</p><p>Cache Terraform providers between runs. Upload plan artifacts and require review before apply. Use reusable workflows for DRY pipeline definitions across repositories.</p></div></div></div></div>
+
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendor/gsap/gsap.min.js"></script>
+  <script src="vendor/gsap/ScrollTrigger.min.js"></script>
+  <script src="js/config.js"></script>
   <script src="js/main.js"></script>
 </body>
-
 </html>
