@@ -187,13 +187,32 @@
     if (!grid) return;
 
     username = username || config.githubUsername || 'pavelpikta';
+    const featured = Array.isArray(config.featuredRepos) ? config.featuredRepos : [];
+    const headers = { Accept: 'application/vnd.github+json' };
 
     try {
-      const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`, {
-        headers: { Accept: 'application/vnd.github+json' },
+      const [userRes, ...featuredResults] = await Promise.all([
+        fetch(`https://api.github.com/users/${username}/repos?sort=stars&per_page=12`, { headers }),
+        ...featured.map((fullName) =>
+          fetch(`https://api.github.com/repos/${fullName}`, { headers }).then((res) =>
+            res.ok ? res.json() : null
+          )
+        ),
+      ]);
+
+      if (!userRes.ok) throw new Error('Failed to fetch repos');
+      const userRepos = await userRes.json();
+      const featuredRepos = featuredResults.filter(Boolean);
+
+      const byId = new Map();
+      [...userRepos, ...featuredRepos].forEach((repo) => {
+        if (repo && !repo.fork) byId.set(repo.id, repo);
       });
-      if (!res.ok) throw new Error('Failed to fetch repos');
-      const repos = await res.json();
+
+      const repos = [...byId.values()]
+        .sort((a, b) => b.stargazers_count - a.stargazers_count)
+        .slice(0, 6);
+
       loading?.remove();
 
       repos.forEach((repo) => {
@@ -201,11 +220,12 @@
         col.className = 'col-md-6 col-lg-4 reveal';
         const desc = (repo.description || 'No description provided.').replace(/</g, '&lt;').replace(/"/g, '&quot;');
         const lang = repo.language ? `<span class="repo-lang"><span class="repo-lang-dot"></span>${repo.language}</span>` : '';
+        const title = repo.owner?.login && repo.owner.login !== username ? repo.full_name : repo.name;
         col.innerHTML = `
           <article class="repo-card">
             <div class="repo-card-top">
               <i class="bi bi-book repo-card-icon"></i>
-              <h3><a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a></h3>
+              <h3><a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
             </div>
             <p class="repo-desc">${desc}</p>
             <div class="repo-meta">
