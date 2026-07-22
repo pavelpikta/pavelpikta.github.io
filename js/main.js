@@ -30,31 +30,27 @@
   };
 
   function buildGitHubStatsUrl(type, username, theme) {
-    const base = 'https://github-stats.pavelpikta.com';
+    const base = 'https://github-stats-extended.vercel.app';
     const colors = STATS_COLORS[theme] || STATS_COLORS.dark;
 
     if (type === 'langs') {
       const params = new URLSearchParams({
         username,
         layout: 'compact',
-        langs_count: '8',
-        hide_title: 'true',
+        langs_count: '20',
         hide_border: 'true',
         ...colors,
       });
-      return `${base}/api/top-langs/?${params.toString()}`;
+      return `${base}/api/top-langs?${params.toString()}`;
     }
 
     const params = new URLSearchParams({
       username,
-      count_private: 'true',
-      show: 'reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage',
+      custom_title: 'GitHub Stats',
+      show: 'reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage,prs_commented,prs_reviewed,issues_commented',
       show_icons: 'true',
-      hide_title: 'true',
-      hide_border: 'true',
       include_all_commits: 'true',
-      rank_icon: 'percentile',
-      line_height: '28',
+      hide_border: 'true',
       ...colors,
     });
     return `${base}/api?${params.toString()}`;
@@ -71,7 +67,7 @@
     el.classList.add('is-loaded');
   }
 
-  function updateGitHubStatsTheme(theme) {
+  function updateGitHubStats(theme) {
     document.querySelectorAll('[data-github-stat]').forEach((img) => {
       const panel = img.closest('.stats-panel-inner');
       panel?.classList.remove('stats-panel-error');
@@ -96,7 +92,7 @@
     html.setAttribute('data-bs-theme', theme);
     localStorage.setItem('theme', theme);
     if (themeColorMeta) themeColorMeta.setAttribute('content', THEME_COLORS[theme]);
-    updateGitHubStatsTheme(theme);
+    updateGitHubStats(theme);
   }
 
   function initTheme() {
